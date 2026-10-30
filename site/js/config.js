@@ -6,6 +6,7 @@
 
 // Paste the Apps Script web app URL (ends in /exec) here after deploying.
 // See backend/apps-script/SETUP.md.
+// https://script.google.com/macros/s/AKfycbxMpppIwpUxR18dM7Zm84J5Qcs5wYlqJlGYcUR_WIsE0lvA1FmabT1MbEW4qYEKxxQD/exec
 const apiUrl = 'https://script.google.com/macros/s/AKfycbxMpppIwpUxR18dM7Zm84J5Qcs5wYlqJlGYcUR_WIsE0lvA1FmabT1MbEW4qYEKxxQD/exec';
 
 /**
