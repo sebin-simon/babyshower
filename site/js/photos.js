@@ -36,20 +36,30 @@ export const PHOTOS = {
 
   /** First look: the sonogram polaroid. */
   ultrasound: {
-    src: '', // e.g. 'img/photos/ultrasound-800.jpg'
-    webp: '',
+    src: 'img/photos/baby-600.jpg', 
+    webp: 'img/photos/baby-600.webp',
     alt: 'Our baby\'s first ultrasound',
     caption: 'Our very first look',
   },
 
   /** "Who will baby look like?" Square-ish, face-centred crops work best. */
-  babyAyana: { src: '', webp: '', alt: 'Ayana as a baby' },
-  babySebin: { src: '', webp: '', alt: 'Sebin as a baby' },
+  babyAyana: { 
+    src: 'img/photos/ayana-600.jpg', 
+    webp: 'img/photos/ayana-600.webp', alt: 'Ayana as a baby' },
+  babySebin: { 
+    src: 'img/photos/sebin-600.jpg', 
+    webp: 'img/photos/sebin-600.webp', alt: 'Sebin as a baby' },
 
   /** Story strip: 3–6 polaroids. Captions are suggestions; change freely. */
   story: [
-    { src: '', caption: 'How we met', icon: 'camera', alt: '' },
-    { src: '', caption: 'The big yes', icon: 'ring', alt: '' },
+    { 
+      src: 'img/photos/how-we-met-400.jpg',
+      srcset: 'img/photos/how-we-met-400.jpg 300w, img/photos/how-we-met-600.jpg 896w',
+      webp: 'img/photos/how-we-met-400.webp 600w, img/photos/how-we-met-600.webp 896w', caption: 'How we met', icon: 'camera', alt: '' },
+    { 
+      src: 'img/photos/big-yes-400.jpg',
+      srcset: 'img/photos/big-yes-400.jpg 600w, img/photos/big-yes-600.jpg 896w',
+      webp: 'img/photos/big-yes-400.webp 600w, img/photos/big-yes-600.webp 896w', caption: 'The big yes', icon: 'ring', alt: '' },
     {
       src: 'img/photos/cartoon-600.jpg',
       srcset: 'img/photos/cartoon-600.jpg 600w, img/photos/cartoon-1200.jpg 896w',
@@ -58,9 +68,18 @@ export const PHOTOS = {
       caption: 'Our storybook',
       alt: 'Storybook cartoon of Ayana and Sebin in the golden forest with a hedgehog, a squirrel and lanterns',
     },
-    { src: '', caption: 'Our first home', icon: 'home', alt: '' },
-    { src: '', caption: 'The day we found out', icon: 'bigheart', alt: '' },
-    { src: '', caption: 'Bump & beanie season', icon: 'leaf', alt: '' },
+    { 
+      src: 'img/photos/first-home-400.jpg',
+      srcset: 'img/photos/first-home-400.jpg 600w, img/photos/first-home-600.jpg 896w',
+      webp: 'img/photos/first-home-400.webp 600w, img/photos/first-home-600.webp 896w', caption: 'Our first home', icon: 'home', alt: '' },
+    { 
+      src: 'img/photos/day-we-found-out-400.jpg',
+      srcset: 'img/photos/day-we-found-out-400.jpg 600w, img/photos/day-we-found-out-600.jpg 896w',
+      webp: 'img/photos/day-we-found-out-400.webp 600w, img/photos/day-we-found-out-600.webp 896w', caption: 'The day we found out', icon: 'bigheart', alt: '' },
+    { 
+      src: 'img/photos/bump-400.jpg',
+      srcset: 'img/photos/bump-400.jpg 600w, img/photos/bump-600.jpg 896w',
+      webp: 'img/photos/bump-400.webp 600w, img/photos/bump-600.webp 896w', caption: 'Bump & beanie season', icon: 'leaf', alt: '' },
   ],
 };
 
