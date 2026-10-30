@@ -95,10 +95,10 @@ export function firstName(name) {
 
 export const DEFAULT_TEMPLATES = Object.freeze({
   warm:
-    "Hi {name}! 🍂 Ayana & Sebin here. We're celebrating our little one with a Baby Shower & Gender Reveal on Sat, Nov 7 at 12 PM in Redmond, and it wouldn't be the same without you.\n\n" +
+    "Hi {name}! 🍂 Ayana & Sebin here. We're celebrating our little one with a Baby Shower & Gender Reveal on Sat, Nov 7 at 11:30 AM in Redmond, and it wouldn't be the same without you.\n\n" +
     'Will baby be a Sun ☀️ or a Shine ✨? RSVP and cast your guess (30 sec):\n{link}',
   short:
-    "{name}, you're invited! ☀️✨ Baby Shower & Gender Reveal, Sat Nov 7, 12 PM, Redmond. RSVP + guess Sun or Shine: {link} – Ayana & Sebin",
+    "{name}, you're invited! ☀️✨ Baby Shower & Gender Reveal, Sat Nov 7, 11:30 AM, Redmond. RSVP + guess Sun or Shine: {link} – Ayana & Sebin",
 });
 
 /** Fills {name} and {link}. If the host deleted {link}, the link is appended so it's never lost. */

@@ -29,10 +29,10 @@ function pickBackend(url) {
 export const CONFIG = Object.freeze({
   hosts: 'Ayana & Sebin',
 
-  // Saturday, November 7, 2026, 12:00 PM Pacific. PST applies (DST ends Nov 1), so -08:00.
-  date: '2026-11-07T12:00:00-08:00',
+  // Saturday, November 7, 2026, 11:30 AM Pacific. PST applies (DST ends Nov 1), so -08:00.
+  date: '2026-11-07T11:30:00-08:00',
   timeZone: 'America/Los_Angeles',
-  // Assumed 3-hour party for calendar invites; adjust if the hosts give an end time.
+  // 2.5-hour party for calendar invites (11:30 AM – 2:00 PM).
   endDate: '2026-11-07T14:00:00-08:00',
 
   venue: 'eaves Redmond Campus',
