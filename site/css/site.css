@@ -612,6 +612,114 @@ h3 { font-size: var(--fs-2xl); }
 .cr-hedgehog { width: 86px; } .cr-mushroom { width: 44px; } .cr-heart { width: 72px; filter: var(--filter-glow) !important; } .cr-acorn { width: 30px; } .cr-squirrel { width: 76px; }
 .made { margin-top: 18px; color: #e6d2b3; font-size: .9rem; font-weight: 700; }
 
+/* ================================ LULLABY MUSIC TOGGLE ================================ */
+.music-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 55;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 6px 12px 6px 9px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  background: rgba(255, 251, 241, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm), inset 0 0 0 1.5px rgba(201, 132, 26, 0.35);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  color: var(--c-maroon);
+  cursor: pointer;
+  transition: transform var(--dur-fast), background-color var(--dur-fast), box-shadow var(--dur-fast);
+}
+.music-toggle:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), inset 0 0 0 1.5px rgba(201, 132, 26, 0.5);
+}
+.music-toggle:focus-visible {
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+.mt-icon {
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  color: var(--c-honey-deep);
+  transition: transform var(--dur-base);
+}
+.mt-icon svg { width: 100%; height: 100%; }
+.mt-bars {
+  display: none;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+.mt-bars i {
+  width: 2.5px;
+  height: 100%;
+  border-radius: 1px;
+  background: var(--c-honey-deep);
+  transform-origin: bottom;
+}
+.music-toggle.playing {
+  background: rgba(255, 248, 230, 0.98);
+  box-shadow: var(--shadow-sm), inset 0 0 0 1.5px var(--c-honey), 0 0 14px rgba(255, 217, 138, 0.5);
+}
+.music-toggle.playing .mt-bars {
+  display: inline-flex;
+}
+.music-toggle.playing .mt-bars i:nth-child(1) {
+  animation: eq-bar 0.9s ease-in-out infinite alternate;
+}
+.music-toggle.playing .mt-bars i:nth-child(2) {
+  animation: eq-bar 0.7s ease-in-out 0.2s infinite alternate;
+}
+.music-toggle.playing .mt-bars i:nth-child(3) {
+  animation: eq-bar 0.85s ease-in-out 0.4s infinite alternate;
+}
+.mt-play{
+  display: none;
+}
+@keyframes eq-bar {
+  0% { transform: scaleY(0.25); }
+  100% { transform: scaleY(1); }
+}
+@media (max-width: 480px) {
+  .music-toggle {
+    bottom: 67px;
+    right: 10px;
+    min-height: 30px;
+    padding: 5px 10px 5px 8px;
+    font-size: 0.75rem;
+    top: unset;
+    opacity: 1;
+    width: 29px;
+    overflow: hidden;
+    padding-left: 3px;
+    opacity: .4;
+  }
+  .mt-text{
+    display: none;
+  }
+  .mt-play{
+    display: block;
+    min-width:15px;
+  }
+  .music-toggle.playing{
+    opacity: 1;
+  }
+  .music-toggle.playing .mt-play {
+    display: none;
+  }
+}
+
 /* ================================ LITTLE LIGHT RAIL ================================ */
 #little-light { position: fixed; right: 0; top: 0; z-index: 45; width: 44px; height: 44px; padding: 0; border: 0; background: none; transform: translateY(14vh); will-change: transform; border-radius: 50%; }
 #little-light .ll { position: absolute; inset: 0; display: grid; place-items: center; transition: opacity .5s, transform .6s var(--ease-out); }

@@ -43,4 +43,8 @@ export const CONFIG = Object.freeze({
   backend: pickBackend(apiUrl),
 
   winnersDefault: 5,
+
+  // Optional custom audio file (e.g. 'audio/lullaby.mp3').
+  // If empty or file not found, automatically plays the built-in Web Audio music-box lullaby.
+  lullabySrc: 'audio/lullaby.mp3',
 });

@@ -26,6 +26,7 @@ import { initRsvp, syncVote, editRsvp } from './rsvp.js';
 import { initTally, applyTally, tallyError } from './tally.js';
 import { initWishes, setWishes, wishesError } from './wishes.js';
 import { initMotion } from './motion.js';
+import { initBgm } from './bgm.js';
 
 clearTimeout(window.__motionFallback);
 if (!MOTION) document.documentElement.classList.remove('motion');
@@ -47,6 +48,7 @@ initPhotos();
 initWishes();
 initVote((t) => { syncVote(t); sky.setTeam(t); });
 initTally();
+initBgm();
 
 /* ---------- public data: tally + wishes, polled while the tab is visible ---------- */
 const POLL_MS = 30000;
