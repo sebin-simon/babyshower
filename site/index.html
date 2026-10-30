@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sun or Shine? · Ayana &amp; Sebin</title>
+<meta name="description" content="You're invited to Ayana &amp; Sebin's Baby Shower &amp; Gender Reveal on Saturday, November 7 in Redmond. RSVP in 30 seconds and cast your guess: Team Sun (boy) or Team Shine (girl)?">
+<meta name="theme-color" content="#fbf5e6">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="img/svg/heart-leaf.svg">
+<link rel="apple-touch-icon" href="img/photos/og-share.jpg">
+
+<!-- Open Graph / link previews in Messages, WhatsApp, etc. -->
+<!-- TODO set absolute URL after deploy: OG/Twitter crawlers need absolute URLs.
+     Replace https://YOUR-USERNAME.github.io/REPO/ with the real GitHub Pages URL (and set CONFIG.siteUrl). -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sun or Shine?">
+<meta property="og:title" content="Sun or Shine? · Ayana &amp; Sebin's Baby Shower &amp; Gender Reveal">
+<meta property="og:description" content="Sat, Nov 7 · 12 PM · Redmond. RSVP and cast your guess: Team Sun ☀️ or Team Shine ✨?">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/REPO/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/REPO/img/photos/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sun or Shine? Ayana and Sebin's baby shower and gender reveal in a golden autumn forest">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sun or Shine? · Ayana &amp; Sebin">
+<meta name="twitter:description" content="Baby Shower &amp; Gender Reveal · Sat, Nov 7 · Redmond. RSVP and cast your guess!">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/REPO/img/photos/og-share.jpg">
+<!-- Relative fallback (works for local previews): img/photos/og-share.jpg -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Courgette&amp;family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="img/photos/cartoon-hero-800.webp"
+      imagesrcset="img/photos/cartoon-hero-800.webp 800w, img/photos/cartoon-hero-1600.webp 896w"
+      imagesizes="(min-width: 960px) 470px, 70vw" fetchpriority="high">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/site.css">
+<script>
+  // Progressive enhancement flags, set before first paint so nothing flashes.
+  (function (d) {
+    var c = d.documentElement.classList;
+    c.add('js');
+    var rm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!rm) c.add('motion');
+    // If GSAP never arrives (offline CDN), show everything in its final state.
+    window.__motionFallback = setTimeout(function () { c.remove('motion'); }, 4000);
+  })(document);
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+
+<!-- Shared SVG symbols and gradients (decorative) -->
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="g-orb"><stop offset="0" stop-color="#fffbe6"/><stop offset=".35" stop-color="#ffe7a3" stop-opacity=".95"/><stop offset=".7" stop-color="#ffd98a" stop-opacity=".35"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g-lamp"><stop offset="0" stop-color="#fff3c4"/><stop offset=".35" stop-color="#ffd98a" stop-opacity=".8"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g-spark" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#ffe7a3"/><stop offset="1" stop-color="#f2c230"/></radialGradient>
+    <linearGradient id="g-lvl-sun" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#6fa3d6" stop-opacity=".9"/><stop offset=".7" stop-color="#d6e7f6" stop-opacity=".4"/><stop offset="1" stop-color="#ffe7a3" stop-opacity=".1"/></linearGradient>
+    <linearGradient id="g-lvl-shine" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ec8fb0" stop-opacity=".9"/><stop offset=".7" stop-color="#fadbe5" stop-opacity=".4"/><stop offset="1" stop-color="#ffe7a3" stop-opacity=".1"/></linearGradient>
+    <linearGradient id="g-paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6d6"/><stop offset=".55" stop-color="#ffd98a"/><stop offset="1" stop-color="#e8a317"/></linearGradient>
+    <clipPath id="clip-jar"><path d="M34 62Q34 50 46 48L114 48Q126 50 126 62L132 196Q132 220 108 220L52 220Q28 220 28 196Z"/></clipPath>
+    <symbol id="s-maple" viewBox="0 0 100 100"><path d="M50 6L57 23L66 17L64 37L79 27L77 40L94 41L84 51L90 58L70 65L73 73L53 69L50 69L47 69L27 73L30 65L10 58L16 51L6 41L23 40L21 27L36 37L34 17L43 23Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M50 6L57 23L66 17L64 37L79 27L77 40L94 41L84 51L90 58L70 65L73 73L53 69L50 69Z" fill="#5a3a1e" opacity=".14"/><path d="M50 69L50 14M50 60L83 44M50 60L17 44M50 64L74 35M50 64L26 35" fill="none" stroke="#5a3a1e" stroke-opacity=".35" stroke-width="1.6" stroke-linecap="round"/><path d="M50 68Q51 82 47 96" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="s-ginkgo" viewBox="0 0 100 100"><path d="M50 68C42 62 20 50 7 32Q20 13 43 11Q47 17 50 27Q53 17 57 11Q80 13 93 32C80 50 58 62 50 68Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M50 68C58 62 80 50 93 32Q80 13 57 11Q53 17 50 27Z" fill="#5a3a1e" opacity=".12"/><path d="M50 66Q49 82 45 96" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="s-sparkle" viewBox="0 0 100 100"><path d="M50 0C54 34 66 46 100 50C66 54 54 66 50 100C46 66 34 54 0 50C34 46 46 34 50 0Z" fill="url(#g-spark)"/></symbol>
+    <symbol id="s-sparkle-pink" viewBox="0 0 100 100"><path d="M50 0C54 34 66 46 100 50C66 54 54 66 50 100C46 66 34 54 0 50C34 46 46 34 50 0Z" fill="#ec8fb0"/><path d="M50 18C52 40 58 46 74 50C58 50 52 44 50 18Z" fill="#fff6d6" opacity=".8"/></symbol>
+    <symbol id="s-sun-mini" viewBox="0 0 100 100"><g stroke="#e8a317" stroke-width="7" stroke-linecap="round"><path d="M50 5v12M50 83v12M5 50h12M83 50h12M18 18l8.5 8.5M73.5 73.5 82 82M18 82l8.5-8.5M73.5 26.5 82 18"/></g><circle cx="50" cy="50" r="24" fill="#f2c230" stroke="#c9841a" stroke-width="3"/><circle cx="43" cy="42" r="8" fill="#fff6d6" opacity=".6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-9-8.6C1.6 8.3 3.4 5 6.8 5c2 0 3.6 1.2 5.2 3 1.6-1.8 3.2-3 5.2-3 3.4 0 5.2 3.3 3.8 6.4C19 15.6 12 20 12 20z"/></g></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></g></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17.5v.01"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z" fill="currentColor"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></g></symbol>
+    <symbol id="i-flame" viewBox="0 0 20 28"><path d="M10 2c6 7 8 11 8 15a8 8 0 0 1-16 0c0-4 2-8 8-15z" fill="#ffd98a"/><path d="M10 13c3 3 4 5 4 7a4 4 0 0 1-8 0c0-2 1-4 4-7z" fill="#fff6c8"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9C1.2 8.9 3 5 6.6 5c2 0 3.5 1.2 4.4 2.6C11.9 6.2 13.4 5 15.4 5 19 5 20.8 8.9 19.3 12 17 16.6 12 21 12 21z"/></symbol>
+    <symbol id="i-onesie" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10h20l10 10-7 6v28H19V26l-7-6z"/><path d="M27 10a5 5 0 0 0 10 0"/><path d="M26 54v-6h12v6"/></g></symbol>
+    <symbol id="i-camera" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="18" width="48" height="34" rx="6"/><path d="M22 18l4-6h12l4 6"/><circle cx="32" cy="35" r="9"/><path d="M47 25h3"/></g></symbol>
+    <symbol id="i-mountain" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 50 24 22l10 14 6-8 18 22z"/><circle cx="46" cy="16" r="5"/></g></symbol>
+    <symbol id="i-ring" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="38" r="15"/><path d="M25 16l7-8 7 8-7 7z"/></g></symbol>
+    <symbol id="i-home" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 32 12l22 18"/><path d="M16 26v26h32V26"/><path d="M27 52V38h10v14"/></g></symbol>
+    <symbol id="i-bigheart" viewBox="0 0 64 64"><path d="M32 54s-18-11-22-22C7 23 12 14 21 14c5 0 9 3 11 7 2-4 6-7 11-7 9 0 14 9 11 18-4 11-22 22-22 22z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6l4.5 10.5 6-3.5-1.5 12.5 9.5-6-1 8 10.5.5-6 6.5 4 4.5-12.5 4 2 5-12.5-2.5h-4L18 47.5l2-5-12.5-4 4-4.5-6-6.5 10.5-.5-1-8 9.5 6-1.5-12.5 6 3.5z"/><path d="M32 44v14"/></g></symbol>
+    <!-- Paper sky lantern used by the RSVP "send my light" moment -->
+    <symbol id="s-sky-lantern" viewBox="0 0 100 140">
+      <path d="M22 18Q50 4 78 18L86 104Q50 116 14 104Z" fill="url(#g-paper)" stroke="#c9841a" stroke-width="2"/>
+      <path d="M36 12 30 108M50 8v104M64 12l6 96" stroke="#c9841a" stroke-width="1.6" opacity=".45" fill="none"/>
+      <path d="M18 60Q50 70 82 60" stroke="#c9841a" stroke-width="1.4" opacity=".35" fill="none"/>
+      <path d="M14 104Q50 116 86 104L80 112Q50 122 20 112Z" fill="#a4511f" opacity=".75"/>
+      <path d="M44 112q6-14 12 0q-6 12-12 0z" fill="#fff6d6"/>
+      <path d="M26 24Q50 14 74 24L76 40Q50 30 24 40Z" fill="#fff6d6" opacity=".5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#rsvp">Skip to RSVP</a>
+
+<div id="sky" aria-hidden="true"><span class="sky-sun"></span></div>
+<canvas id="ambient" aria-hidden="true"></canvas>
+
+<button id="little-light" type="button" aria-label="The little light: jump to the vote">
+  <span class="ll ll-dot"><span class="ll-core"></span></span>
+  <span class="ll ll-sun"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sun-mini"/></svg></span>
+  <span class="ll ll-shine"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sparkle-pink"/></svg></span>
+  <span class="tip" aria-hidden="true">Follow me</span>
+</button>
+
+<!-- ============================ 1 · HERO (dawn) ============================ -->
+<header class="hero" id="top" data-sky="dawn">
+  <div class="hero-lights" id="heroLights" aria-hidden="true"></div>
+  <div class="canopy canopy-l" aria-hidden="true"><div class="canopy-in" id="canopyL"></div></div>
+  <div class="canopy canopy-r" aria-hidden="true"><div class="canopy-in" id="canopyR"></div></div>
+
+  <div class="hero-grid">
+    <div class="h-eyebrow">
+      <p class="greet" id="greet"><span class="greet-av" id="greetAv" aria-hidden="true">✦</span><span id="greetTxt">You're invited! Bring your best guess</span></p>
+      <p class="what"><span class="cfg-hosts">Ayana &amp; Sebin</span>'s Baby Shower &amp; Gender Reveal</p>
+    </div>
+
+    <h1 class="title" id="title">
+      <span class="sr-only">Sun or Shine?</span>
+      <span class="title-vis" aria-hidden="true">
+        <span class="w w-sun"><svg class="t-ico ico-sun" viewBox="0 0 100 100"><use href="#s-sun-mini"/></svg><span class="ch">s</span><span class="ch">u</span><span class="ch">n</span></span><span class="w w-or">or</span><span class="w w-shine"><svg class="t-ico ico-shine" viewBox="0 0 100 100"><use href="#s-sparkle-pink"/></svg><span class="ch">s</span><span class="ch">h</span><span class="ch">i</span><span class="ch">n</span><span class="ch">e</span></span><span class="w w-q">?</span>
+      </span>
+    </h1>
+
+    <p class="h-sub">She brings the sunshine to our lives. Now our little light is on the way. Will baby be the <b class="t-sun">Sun ☀️</b> or the <b class="t-shine">Shine ✨</b>?</p>
+
+    <div class="hero-art">
+      <div class="hang hang-l" aria-hidden="true"><span class="cord"></span><span class="halo"></span><svg viewBox="0 0 120 200"><use href="img/svg/sprite.svg#lantern"/></svg></div>
+      <div class="hang hang-r" aria-hidden="true"><span class="cord"></span><span class="halo"></span><svg viewBox="0 0 120 200"><use href="img/svg/sprite.svg#lantern"/></svg></div>
+      <div class="arch">
+        <picture>
+          <source type="image/webp" srcset="img/photos/cartoon-hero-800.webp 800w, img/photos/cartoon-hero-1600.webp 896w" sizes="(min-width: 960px) 470px, 70vw">
+          <img src="img/photos/cartoon-hero-800.jpg" srcset="img/photos/cartoon-hero-800.jpg 800w, img/photos/cartoon-hero-1600.jpg 896w" sizes="(min-width: 960px) 470px, 70vw"
+               width="800" height="1071" alt="Storybook illustration of Ayana and Sebin in a lantern-lit golden forest, making a heart over the bump around a maple leaf" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <svg class="sparkle-dot sd-1" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sparkle"/></svg>
+      <svg class="sparkle-dot sd-2" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sparkle"/></svg>
+      <svg class="sparkle-dot sd-3" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sparkle-pink"/></svg>
+    </div>
+
+    <ul class="h-meta" aria-label="Event at a glance">
+      <li class="chip"><svg aria-hidden="true"><use href="#i-cal"/></svg><span data-cfg="dateShort">Sat, Nov 7</span></li>
+      <li class="chip"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-cfg="timeRange">12–2 PM</span></li>
+      <li class="chip"><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-cfg="venueShort">Redmond</span></li>
+    </ul>
+
+    <div class="h-cta">
+      <a class="btn btn-primary btn-lg" href="#guess" id="heroCta"><svg class="flame" aria-hidden="true"><use href="#i-flame"/></svg><span id="heroCtaTxt">RSVP &amp; cast your guess</span></a>
+      <p class="micro" id="heroMicro">About 30 seconds · 3 taps</p>
+    </div>
+    <a class="cue" href="#invite"><span>follow the little light</span><span class="trail" aria-hidden="true"><i></i></span></a>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============================ 2 · INVITATION (morning) ============================ -->
+<section class="sec" id="invite" data-sky="morning" aria-labelledby="invite-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="5" fill="#f2c230"/></svg>Morning · The invitation</p>
+    <h2 id="invite-h">A note from the hosts</h2>
+  </div>
+  <article class="invite-card paper-grain" id="inviteCard">
+    <svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-maple"/></svg>
+    <svg class="corner br" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-ginkgo"/></svg>
+    <p class="note-title">Welcome, friend!</p>
+    <p class="note">She brings the sunshine to our lives, but will our baby be the <b class="t-sun">Sun ☀️ (Boy)</b> or the <b class="t-shine">Shine ✨ (Girl)</b>? Your presence is our greatest gift, so please, no wrapped presents. Just bring your love and predictions!</p>
+    <p class="sig">With love, <span class="cfg-hosts">Ayana &amp; Sebin</span></p>
+    <div class="rule" aria-hidden="true"><svg viewBox="0 0 100 120"><use href="img/svg/sprite.svg#acorn"/></svg></div>
+    <dl class="details">
+      <div class="detail">
+        <dt><span class="ic" aria-hidden="true"><svg><use href="#i-cal"/></svg></span>When</dt>
+        <dd><span data-cfg="dateLong">Saturday, November 7, 2026</span><br><span data-cfg="timeLong">12:00 – 2:00 PM Pacific</span></dd>
+      </div>
+      <div class="detail">
+        <dt><span class="ic" aria-hidden="true"><svg><use href="#i-pin"/></svg></span>Where</dt>
+        <dd><span data-cfg="venue">eaves Redmond Campus</span><br><span data-cfg="address">Redmond, WA</span></dd>
+      </div>
+      <div class="detail">
+        <dt><span class="ic" aria-hidden="true"><svg><use href="#i-gift"/></svg></span>Gifts</dt>
+        <dd>Please, no wrapped presents. Your love and your best guess are plenty.</dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn btn-ghost btn-sm" data-gcal href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Google Calendar</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-ics><svg aria-hidden="true"><use href="#i-down"/></svg>Apple / Outlook (.ics)</button>
+      <a class="btn btn-ghost btn-sm" data-maps href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Open in Maps</a>
+    </div>
+  </article>
+</section>
+
+<!-- ============================ 3 · OUR STORY (noon) ============================ -->
+<section class="sec" id="story" data-sky="noon" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5" fill="#f2c230"/><path d="M3 20h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/></svg>Midday · Our story</p>
+      <h2 id="story-h">From storybook to real life</h2>
+      <p class="lede">Drag the leaf to see the moment our illustrator painted.</p>
+    </div>
+    <div class="wipe" id="wipe" style="--x:100%">
+      <!-- images injected from PHOTOS.wipe in js/photos.js -->
+      <span class="wipe-tag l" aria-hidden="true">Storybook</span><span class="wipe-tag r" aria-hidden="true">Real life</span>
+      <div class="wipe-handle" id="wipeHandle" role="slider" tabindex="0" aria-label="Compare the storybook painting with the real photo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" aria-valuetext="Storybook 100%">
+        <span class="knob"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#s-maple"/></svg></span>
+      </div>
+    </div>
+    <p class="wipe-hint">the storybook us <span aria-hidden="true">⟷</span> the real us</p>
+
+    <div class="chapters-wrap">
+      <ul class="chapters" id="chapters" aria-label="Our story in photos"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4 · FIRST LOOK (noon) ============================ -->
+<section class="sec" id="firstlook" data-sky="noon" aria-labelledby="fl-h">
+  <div class="firstlook">
+    <figure class="polaroid sono" id="sono" data-anim>
+      <span class="tape" aria-hidden="true"></span>
+      <div class="pic" id="sonoPic"></div>
+      <figcaption id="sonoCap">Our very first look</figcaption>
+    </figure>
+    <div class="copy rv">
+      <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5" fill="#f2c230"/><path d="M3 20h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/></svg>Midday · First look</p>
+      <h2 id="fl-h">Hello, little light</h2>
+      <p class="lede" id="sonoLede">A tiny heartbeat, a blurry profile and a very big feeling. Our sonogram goes here soon, so check back before the party.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 5 · LOOKALIKE (afternoon) ============================ -->
+<section class="sec" id="lookalike" data-sky="afternoon" aria-labelledby="ll-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><circle cx="15" cy="11" r="5" fill="#f2b230"/><path d="M3 20h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/></svg>Afternoon · A little game</p>
+    <h2 id="ll-h">Who will baby look like?</h2>
+    <p class="lede">Slide to place your bet. Our own baby photos are on their way.</p>
+  </div>
+  <div class="ll-row" id="llRow">
+    <figure class="bb side-a"><div class="bb-pic" id="bbA"></div><figcaption>Baby Ayana</figcaption></figure>
+    <figure class="bb mix"><div class="bb-pic"><div class="mx a" id="mxA"></div><div class="mx b" id="mxB"></div><span class="q" aria-hidden="true">?</span><span class="pct" id="mixPct">50 · 50</span></div><figcaption id="mixLbl">A perfect mix</figcaption></figure>
+    <figure class="bb side-b"><div class="bb-pic" id="bbB"></div><figcaption>Baby Sebin</figcaption></figure>
+  </div>
+  <div class="slider">
+    <label class="sr-only" for="mix">Will baby look more like Ayana or more like Sebin?</label>
+    <input type="range" id="mix" min="0" max="100" value="50" step="5" aria-valuetext="A perfect mix">
+    <div class="ends" aria-hidden="true"><span>More Ayana</span><span>More Sebin</span></div>
+  </div>
+  <p class="ll-note" id="llNote" aria-live="polite">Just for fun. Tell us your verdict at the party!</p>
+</section>
+
+<!-- ============================ 6 · THE BIG QUESTION (golden hour) ============================ -->
+<section class="sec guess" id="guess" data-sky="golden" aria-labelledby="guess-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><circle cx="17" cy="14" r="5" fill="#f0a030"/><path d="M3 20h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/></svg>Golden hour · The big question</p>
+    <h2 id="guess-h">Which way will the little light go?</h2>
+    <p class="lede">The path splits here. Tap a side to cast your guess. We'll tuck it into your RSVP.</p>
+  </div>
+  <div class="duel" id="duel">
+    <svg class="fork" id="fork" viewBox="0 0 400 150" aria-hidden="true">
+      <path class="trail" id="p-sun" d="M200 16C200 74 100 62 100 146"/>
+      <path class="trail" id="p-shine" d="M200 16C200 74 300 62 300 146"/>
+      <path class="lit lit-sun" id="lit-sun" d="M200 16C200 74 100 62 100 146"/>
+      <path class="lit lit-shine" id="lit-shine" d="M200 16C200 74 300 62 300 146"/>
+      <text class="orb-label" x="224" y="22">the little light</text>
+      <g id="orb" transform="translate(200 16)"><g class="orb-bob"><circle r="20" fill="url(#g-orb)"/><circle r="6" fill="#fffbe6"/></g></g>
+    </svg>
+    <div class="sides" role="group" aria-label="Your guess">
+      <button class="side side-sun" type="button" data-team="sun" aria-pressed="false">
+        <span class="badge">My guess</span>
+        <svg class="side-ico" viewBox="0 0 200 200" aria-hidden="true">
+          <g class="rays" fill="#f2c230" stroke="#c9841a" stroke-width="2.5" stroke-linejoin="round"><path d="M100 10Q111 30 100 46Q89 30 100 10Z"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(30 100 100)"/><path d="M100 10Q111 30 100 46Q89 30 100 10Z" transform="rotate(60 100 100)"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(90 100 100)"/><path d="M100 10Q111 30 100 46Q89 30 100 10Z" transform="rotate(120 100 100)"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(150 100 100)"/><path d="M100 10Q111 30 100 46Q89 30 100 10Z" transform="rotate(180 100 100)"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(210 100 100)"/><path d="M100 10Q111 30 100 46Q89 30 100 10Z" transform="rotate(240 100 100)"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(270 100 100)"/><path d="M100 10Q111 30 100 46Q89 30 100 10Z" transform="rotate(300 100 100)"/><path d="M100 24Q108 36 100 48Q92 36 100 24Z" transform="rotate(330 100 100)"/></g>
+          <circle cx="100" cy="100" r="54" fill="#f2c230" stroke="#c9841a" stroke-width="3"/><path d="M146 72A54 54 0 0 1 72 146A62 62 0 0 0 146 72Z" fill="#e8a317" opacity=".55"/><ellipse cx="82" cy="74" rx="22" ry="14" transform="rotate(-30 82 74)" fill="#fff6d6" opacity=".55"/>
+          <g class="face"><ellipse cx="70" cy="112" rx="10" ry="6.5" fill="#ec8fb0" opacity=".6"/><ellipse cx="130" cy="112" rx="10" ry="6.5" fill="#ec8fb0" opacity=".6"/><path d="M73 98Q80 90 87 98M113 98Q120 90 127 98" fill="none" stroke="#3b2412" stroke-width="4" stroke-linecap="round"/><path d="M88 114Q100 126 112 114" fill="#6b1f2a" stroke="#3b2412" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+          <circle class="ring" cx="100" cy="100" r="64" fill="none" stroke="#6fa3d6" stroke-width="3" stroke-dasharray="3 9"/>
+        </svg>
+        <span class="t">Team Sun</span>
+        <span class="s">It's a boy 💙</span>
+        <span class="n" data-count="sun">&nbsp;</span>
+      </button>
+      <button class="side side-shine" type="button" data-team="shine" aria-pressed="false">
+        <span class="badge">My guess</span>
+        <svg class="side-ico" viewBox="0 0 200 200" aria-hidden="true">
+          <g class="twinkles"><path d="M40 24C41.2 40.4 43.6 42.8 60 44C43.6 45.2 41.2 47.6 40 64C38.8 47.6 36.4 45.2 20 44C36.4 42.8 38.8 40.4 40 24Z" fill="#ec8fb0"/><path d="M162 32C162.8 43.5 164.5 45.2 176 46C164.5 46.8 162.8 48.5 162 60C161.2 48.5 159.5 46.8 148 46C159.5 45.2 161.2 43.5 162 32Z" fill="#f2c230"/><path d="M160 140C161.1 154.8 163.2 156.9 178 158C163.2 159.1 161.1 161.2 160 176C158.9 161.2 156.8 159.1 142 158C156.8 156.9 158.9 154.8 160 140Z" fill="#ec8fb0"/><path d="M36 141C36.7 150 38 151.3 47 152C38 152.7 36.7 154 36 163C35.3 154 34 152.7 25 152C34 151.3 35.3 150 36 141Z" fill="#f2c230"/></g>
+          <path d="M100 18C104.9 82 118 95.1 182 100C118 104.9 104.9 118 100 182C95.1 118 82 104.9 18 100C82 95.1 95.1 82 100 18Z" fill="#ffd98a" stroke="#c9841a" stroke-width="3" stroke-linejoin="round"/><path d="M100 30C103 70 110 86 128 96C108 92 100 78 100 30Z" fill="#fff6d6" opacity=".7"/>
+          <g class="face"><ellipse cx="80" cy="110" rx="7.5" ry="5" fill="#ec8fb0" opacity=".75"/><ellipse cx="120" cy="110" rx="7.5" ry="5" fill="#ec8fb0" opacity=".75"/><circle cx="88" cy="98" r="4.5" fill="#3b2412"/><circle cx="112" cy="98" r="4.5" fill="#3b2412"/><circle cx="89.6" cy="96.4" r="1.6" fill="#fff"/><circle cx="113.6" cy="96.4" r="1.6" fill="#fff"/><path d="M93 110Q100 117 107 110" fill="none" stroke="#3b2412" stroke-width="3" stroke-linecap="round"/></g>
+          <circle class="ring" cx="100" cy="100" r="64" fill="none" stroke="#ec8fb0" stroke-width="3" stroke-dasharray="3 9"/>
+        </svg>
+        <span class="t">Team Shine</span>
+        <span class="s">It's a girl 💖</span>
+        <span class="n" data-count="shine">&nbsp;</span>
+      </button>
+    </div>
+  </div>
+  <p class="vote-status" id="voteStatus" aria-live="polite">Two paths, one little light. Which will it be?</p>
+</section>
+
+<!-- ============================ 7 · RSVP (last light) ============================ -->
+<section class="sec" id="rsvp" data-sky="lastlight" aria-labelledby="rsvp-h" tabindex="-1">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="17" r="5" fill="#e8892a"/><path d="M3 20h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/></svg>Last light · Save your seat</p>
+    <h2 id="rsvp-h">Send us your light</h2>
+    <p class="lede" id="rsvpLede">Three quick taps. You can come back and change your answers any time.</p>
+  </div>
+
+  <div class="rsvp-stage" id="rsvpStage">
+    <!-- ---------- FORM ---------- -->
+    <form class="card rsvp-card" id="rsvpForm" novalidate aria-labelledby="rsvpTitle">
+      <div class="fold-pleats" aria-hidden="true"></div>
+      <div class="rsvp-head">
+        <h3 id="rsvpTitle" tabindex="-1">Light your lantern</h3>
+        <p id="rsvpSub">Tap your answers. It takes about 30 seconds.</p>
+      </div>
+
+      <div class="who" id="whoRow" hidden>
+        <span class="av" id="whoAv" aria-hidden="true">✦</span>
+        <div class="who-txt"><b id="whoName"></b><span>Your personal invite</span></div>
+        <button type="button" class="link-btn" id="notYou">Not you?</button>
+      </div>
+
+      <div class="alert" id="lookupAlert" role="status" hidden><svg aria-hidden="true"><use href="#i-warn"/></svg><div><p id="lookupMsg"></p><button type="button" class="btn btn-ghost btn-sm" id="lookupRetry" hidden>Try again</button></div></div>
+
+      <fieldset class="q" id="qAtt" aria-describedby="err-attending">
+        <legend><span class="qn" aria-hidden="true">1</span>Can you make it?</legend>
+        <div class="att">
+          <label><input type="radio" name="attending" value="yes"><span class="face"><span class="e" aria-hidden="true">🎉</span>Yes!<small>I'll be there</small></span></label>
+          <label><input type="radio" name="attending" value="maybe"><span class="face"><span class="e" aria-hidden="true">🤞</span>Maybe<small>Hoping to</small></span></label>
+          <label><input type="radio" name="attending" value="no"><span class="face"><span class="e" aria-hidden="true">💌</span>Can't<span class="sr-only"> make it</span><small>Sending love</small></span></label>
+        </div>
+        <p class="err" id="err-attending" data-err="attending"></p>
+      </fieldset>
+
+      <div class="collapse" id="countsWrap"><div class="collapse-in">
+        <fieldset class="q" id="qCount" aria-describedby="err-adults err-kids">
+          <legend><span class="qn" aria-hidden="true">2</span>Who's coming with you?</legend>
+          <div class="counts">
+            <div class="stepper" role="group" aria-labelledby="lAd">
+              <div class="lab"><b id="lAd">Adults</b><span>including you</span></div>
+              <div class="ctl"><button type="button" data-step="adults" data-d="-1" aria-label="One fewer adult">−</button><output id="o-adults" aria-live="polite" aria-labelledby="lAd">1</output><button type="button" data-step="adults" data-d="1" aria-label="One more adult">+</button></div>
+            </div>
+            <div class="stepper" role="group" aria-labelledby="lKid">
+              <div class="lab"><b id="lKid">Kids</b><span>under 12</span></div>
+              <div class="ctl"><button type="button" data-step="kids" data-d="-1" aria-label="One fewer kid">−</button><output id="o-kids" aria-live="polite" aria-labelledby="lKid">0</output><button type="button" data-step="kids" data-d="1" aria-label="One more kid">+</button></div>
+            </div>
+          </div>
+          <p class="err" id="err-adults" data-err="adults"></p>
+          <p class="err" id="err-kids" data-err="kids"></p>
+        </fieldset>
+      </div></div>
+
+      <fieldset class="q" id="qVote" aria-describedby="err-vote">
+        <legend><span class="qn" aria-hidden="true" id="voteN">3</span><span id="voteQ">Your guess: Sun or Shine?</span></legend>
+        <div class="vote">
+          <label class="vt-sun"><input type="radio" name="vote" value="sun"><span class="tile"><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><svg class="vt-ico" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sun-mini"/></svg><b>Team Sun</b><span>Boy 💙</span></span></label>
+          <label class="vt-shine"><input type="radio" name="vote" value="shine"><span class="tile"><span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span><svg class="vt-ico" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-sparkle-pink"/></svg><b>Team Shine</b><span>Girl 💖</span></span></label>
+        </div>
+        <p class="err" id="err-vote" data-err="vote"></p>
+      </fieldset>
+
+      <div class="q" id="qId">
+        <p class="qlabel"><span class="qn" aria-hidden="true" id="idN">4</span>And you are…</p>
+        <div class="field" id="fName">
+          <label for="f-name">Your name</label>
+          <input class="input" id="f-name" name="name" autocomplete="name" autocapitalize="words" enterkeyhint="next" maxlength="60" aria-describedby="h-name err-name">
+          <span class="hint" id="h-name">Only your first name shows on the wishing line.</span>
+          <p class="err" id="err-name" data-err="name"></p>
+        </div>
+        <div class="field" id="fPhone">
+          <label for="f-phone">Mobile number <span class="opt">(optional)</span></label>
+          <input class="input" id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="done" placeholder="(425) 555-0123" maxlength="22" aria-describedby="h-phone err-phone">
+          <span class="hint" id="h-phone">Only used to find your RSVP if you come back to edit it.</span>
+          <p class="err" id="err-phone" data-err="phone"></p>
+        </div>
+      </div>
+
+      <div class="alert alert-net" id="netAlert" role="alert" hidden><svg aria-hidden="true"><use href="#i-warn"/></svg><div><p id="netMsg">We couldn't reach the forest just now. Your answers are safe on this phone.</p><button type="button" class="btn btn-primary btn-sm" id="netRetry">Try again</button></div></div>
+
+      <div class="submit">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn"><svg class="flame" aria-hidden="true"><use href="#i-flame"/></svg><span id="submitTxt">Send my light</span></button>
+        <p class="fine">No account, no app. Change your answers any time.</p>
+      </div>
+      <p class="sr-only" id="formStatus" aria-live="polite"></p>
+    </form>
+
+    <!-- ---------- CONFIRMATION ---------- -->
+    <div class="card done-card" id="doneCard" tabindex="-1" aria-labelledby="doneTitle" hidden>
+      <div class="done-lan" aria-hidden="true">
+        <span class="halo"></span>
+        <svg viewBox="0 0 120 200"><g class="glow" fill="#ffd98a"><circle cx="60" cy="104" r="58" opacity=".14"/><circle cx="60" cy="104" r="44" opacity=".2"/><circle cx="60" cy="104" r="30" opacity=".3"/></g><circle cx="60" cy="12" r="7" fill="none" stroke="#3b2412" stroke-width="3.5"/><path d="M60 19V28" stroke="#3b2412" stroke-width="3.5" stroke-linecap="round"/><path d="M44 46L50 30Q60 25 70 30L76 46Z" fill="#3b2412"/><rect x="34" y="44" width="52" height="9" rx="4" fill="#5a3a1e" stroke="#3b2412" stroke-width="2"/><path class="glass" d="M40 53H80L76 148H44Z" fill="#ffd98a" stroke="#3b2412" stroke-width="3" stroke-linejoin="round"/><path d="M48 60H72L69 140H51Z" fill="#fff6d6" opacity=".75"/><path class="flame" d="M60 86C68 98 70 106 66 114Q60 122 54 114C50 106 54 98 60 86Z" fill="#e8a317"/><path d="M60 98C64 104 65 109 62 113Q60 116 58 113C55 109 57 104 60 98Z" fill="#fff6d6"/><path d="M60 53V148M41.5 82H78.5M43 116H77" stroke="#3b2412" stroke-width="2.5" opacity=".7"/><rect x="36" y="146" width="48" height="10" rx="4" fill="#5a3a1e" stroke="#3b2412" stroke-width="2"/><path d="M45 156H75L69 166H51Z" fill="#3b2412"/></svg>
+      </div>
+      <p class="eyebrow" id="doneEyebrow">Lantern lit</p>
+      <h3 class="done-title" id="doneTitle">See you there!</h3>
+      <p class="done-msg" id="doneMsg"></p>
+      <ul class="sum" id="doneSum" aria-label="Your RSVP"></ul>
+      <div class="actions done-actions">
+        <a class="btn btn-primary btn-sm" data-gcal href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Google Calendar</a>
+        <button type="button" class="btn btn-ghost btn-sm" data-ics><svg aria-hidden="true"><use href="#i-down"/></svg>Apple / Outlook</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="editBtn">Edit my RSVP</button>
+      </div>
+      <div class="savelink" id="saveLink" hidden>
+        <p>Want to edit later from another phone? Keep your personal link.</p>
+        <button type="button" class="btn btn-ghost btn-sm" id="copyLink"><svg aria-hidden="true"><use href="#i-link"/></svg><span id="copyTxt">Copy my link</span></button>
+      </div>
+
+      <div class="bonus" id="bonus">
+        <h4><svg aria-hidden="true"><use href="#i-star"/></svg>Bonus round <span class="opt-pill">optional</span></h4>
+        <div class="bcard">
+          <label class="blabel" for="f-wish">A wish for baby</label>
+          <p class="bhelp" id="h-wish">It hangs on the wishing line with your first name.</p>
+          <div class="prompts" role="group" aria-label="Wish starters">
+            <button type="button" data-prompt="I hope you always ">I hope you always…</button>
+            <button type="button" data-prompt="Your first adventure should be ">First adventure…</button>
+            <button type="button" data-prompt="Never forget that ">Never forget…</button>
+          </div>
+          <textarea class="input wish-input" id="f-wish" maxlength="500" rows="3" placeholder="Write something sweet…" aria-describedby="h-wish err-wish"></textarea>
+          <p class="err" id="err-wish" data-err="wish"></p>
+          <div class="brow"><span class="saved" id="wishSaved" hidden><svg aria-hidden="true"><use href="#i-check"/></svg><span>On the wishing line</span></span><button type="button" class="btn btn-ghost btn-sm" id="saveWish">Hang my wish</button></div>
+        </div>
+        <div class="bcard">
+          <p class="blabel" id="bn-label">Got a name in mind?</p>
+          <p class="bhelp" id="h-bn">Only Ayana &amp; Sebin see these. They promise to read every one.</p>
+          <div class="names2" role="group" aria-labelledby="bn-label" aria-describedby="h-bn err-baby_name">
+            <div class="field"><label for="f-bn-sun"><span class="t-sun">If Sun</span> ☀️</label><input class="input" id="f-bn-sun" maxlength="24" autocapitalize="words" placeholder="e.g. Arlo"></div>
+            <div class="field"><label for="f-bn-shine"><span class="t-shine">If Shine</span> ✨</label><input class="input" id="f-bn-shine" maxlength="24" autocapitalize="words" placeholder="e.g. Ellie"></div>
+          </div>
+          <p class="err" id="err-baby_name" data-err="baby_name"></p>
+          <div class="brow"><span class="saved" id="nameSaved" hidden><svg aria-hidden="true"><use href="#i-check"/></svg><span>Sent to the hosts</span></span><button type="button" class="btn btn-ghost btn-sm" id="saveNames">Send my ideas</button></div>
+        </div>
+        <p class="sr-only" id="bonusStatus" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SUNSET DIVIDER ============================ -->
+<div class="dusk" id="dusk" data-sky="sunset">
+  <svg id="treeline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  <p class="dusk-line">The sun slips behind the maples… <em>and the lanterns wake up.</em></p>
+</div>
+
+<!-- ============================ 8 · JARS OF LIGHT (dusk) ============================ -->
+<section class="sec dark" id="tally" data-sky="dusk" aria-labelledby="tally-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18" stroke="#ffd98a" stroke-width="2" stroke-linecap="round"/><path d="M7 18a5 5 0 0 1 10 0" fill="#e8892a"/></svg>Dusk · The guesses so far</p>
+    <h2 id="tally-h">Jars of light</h2>
+    <p class="lede">Every guess is a firefly. Watch them gather.</p>
+  </div>
+  <div class="jars" id="jars" data-state="loading">
+    <figure class="jarbox jar-sun" data-anim>
+      <svg class="jar" viewBox="0 0 160 230" aria-hidden="true">
+        <g clip-path="url(#clip-jar)"><rect class="lvl" x="0" y="220" width="160" height="0" fill="url(#g-lvl-sun)"/><g class="flies"></g></g>
+        <path class="glass" d="M34 62Q34 50 46 48L114 48Q126 50 126 62L132 196Q132 220 108 220L52 220Q28 220 28 196Z"/>
+        <path class="hl" d="M42 76 38 186"/>
+        <rect x="40" y="26" width="80" height="22" rx="5" fill="#8a5a2e"/><path d="M44 33h72M44 40h72" stroke="#6b4422" stroke-width="2"/>
+        <path d="M36 54Q80 64 124 54" fill="none" stroke="#d8b27a" stroke-width="3"/>
+      </svg>
+      <figcaption><span class="j-count" data-jar-count="sun">–</span><span class="j-lbl">Team Sun ☀️💙</span><span class="j-pct" data-jar-pct="sun">&nbsp;</span></figcaption>
+    </figure>
+    <div class="vs" aria-hidden="true">vs</div>
+    <figure class="jarbox jar-shine" data-anim>
+      <svg class="jar" viewBox="0 0 160 230" aria-hidden="true">
+        <g clip-path="url(#clip-jar)"><rect class="lvl" x="0" y="220" width="160" height="0" fill="url(#g-lvl-shine)"/><g class="flies"></g></g>
+        <path class="glass" d="M34 62Q34 50 46 48L114 48Q126 50 126 62L132 196Q132 220 108 220L52 220Q28 220 28 196Z"/>
+        <path class="hl" d="M42 76 38 186"/>
+        <rect x="40" y="26" width="80" height="22" rx="5" fill="#8a5a2e"/><path d="M44 33h72M44 40h72" stroke="#6b4422" stroke-width="2"/>
+        <path d="M36 54Q80 64 124 54" fill="none" stroke="#d8b27a" stroke-width="3"/>
+      </svg>
+      <figcaption><span class="j-count" data-jar-count="shine">–</span><span class="j-lbl">Team Shine ✨💖</span><span class="j-pct" data-jar-pct="shine">&nbsp;</span></figcaption>
+    </figure>
+  </div>
+  <div class="splitbar" id="splitbar" role="img" aria-label="Counting fireflies"><div class="sb-sun"></div><span class="sb-light"></span></div>
+  <p class="tally-note" id="tallyNote"><span class="live-dot" aria-hidden="true"></span><span id="tallyNoteTxt">Counting fireflies…</span></p>
+  <p class="sr-only" id="tallyLive" aria-live="polite"></p>
+</section>
+
+<!-- ============================ 9 · THE WISHING LINE (night) ============================ -->
+<section class="sec dark" id="wishes" data-sky="night" aria-labelledby="wish-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4a7 7 0 1 0 5 12A8 8 0 0 1 15 4z" fill="#ffd98a"/></svg>Nightfall · Wishes</p>
+    <h2 id="wish-h">The wishing line</h2>
+    <p class="lede">Wishes from friends and family, strung up under the fairy lights.</p>
+  </div>
+  <div class="wall" id="wall" aria-live="polite" aria-busy="true"></div>
+  <div class="wall-more">
+    <button class="btn btn-glow btn-sm" type="button" id="moreWishes" hidden>Show all wishes</button>
+    <a class="btn btn-glow btn-sm" href="#rsvp" id="addWish">Add your wish</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ 10 · FINALE (night) ============================ -->
+<footer class="finale dark" id="finale" data-sky="night" aria-labelledby="fin-h">
+  <p class="eyebrow">Until we meet</p>
+  <h2 id="fin-h">See you under the canopy</h2>
+  <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Time until the party">
+    <div class="cd"><b id="cdD">–</b><span>days</span></div>
+    <div class="cd"><b id="cdH">–</b><span>hours</span></div>
+    <div class="cd"><b id="cdM">–</b><span>mins</span></div>
+  </div>
+  <p class="cd-when"><span data-cfg="dateLong">Saturday, November 7, 2026</span> · <span data-cfg="timeRange">12–2 PM</span><br><span data-cfg="venue">eaves Redmond Campus</span>, <span data-cfg="address">Redmond, WA</span></p>
+  <div class="actions">
+    <button class="btn btn-glow btn-sm" type="button" data-ics><svg aria-hidden="true"><use href="#i-cal"/></svg>Add to calendar</button>
+    <a class="btn btn-glow btn-sm" data-maps href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Directions</a>
+    <a class="btn btn-glow btn-sm" href="#rsvp" id="finRsvp">RSVP</a>
+  </div>
+  <div class="critters" aria-hidden="true">
+    <svg class="cr-hedgehog" viewBox="0 0 200 140"><use href="img/svg/sprite.svg#hedgehog"/></svg>
+    <svg class="cr-mushroom" viewBox="0 0 120 120"><use href="img/svg/sprite.svg#mushroom"/></svg>
+    <svg class="cr-heart" viewBox="0 0 200 200"><use href="img/svg/sprite.svg#heart-leaf"/></svg>
+    <svg class="cr-acorn" viewBox="0 0 100 120"><use href="img/svg/sprite.svg#acorn"/></svg>
+    <svg class="cr-squirrel" viewBox="0 0 200 200"><use href="img/svg/sprite.svg#squirrel"/></svg>
+  </div>
+  <p class="made">With love, <span class="cfg-hosts">Ayana &amp; Sebin</span> · Redmond, WA</p>
+</footer>
+
+<!-- Sticky mobile dock: one CTA at a time -->
+<div class="dock" id="dock" aria-hidden="true">
+  <a class="btn btn-primary" href="#guess" id="dockCta" tabindex="-1"><svg class="flame" aria-hidden="true"><use href="#i-flame"/></svg>RSVP &amp; vote · 30 sec</a>
+  <div class="dock-done" id="dockDone" hidden><span id="dockDoneTxt"></span><a class="btn btn-ghost btn-sm" href="#rsvp" tabindex="-1" id="dockEdit">Edit</a></div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="fly-lantern" aria-hidden="true" hidden><span class="halo"></span><svg viewBox="0 0 100 140"><use href="#s-sky-lantern"/></svg></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<noscript><p class="noscript">This invitation needs JavaScript for the RSVP. You can still read the details above. See you Saturday, November 7!</p></noscript>
+</body>
+</html>

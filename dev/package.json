@@ -1,0 +1,19 @@
+{
+  "name": "sun-or-shine-dev",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Dev tooling for the Sun or Shine site (image optimisation, mock API server, tests). Not deployed.",
+  "type": "module",
+  "scripts": {
+    "images": "node optimize-images.mjs",
+    "dev": "node mock-server.mjs",
+    "test": "node --test api.test.mjs host.test.mjs"
+  },
+  "devDependencies": {
+    "opentype.js": "^1.3.4",
+    "sharp": "^0.33.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

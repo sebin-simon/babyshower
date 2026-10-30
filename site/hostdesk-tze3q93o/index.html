@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="theme-color" content="#3b2412">
+  <title>Host desk · Sun or Shine</title>
+  <link rel="icon" href="../img/svg/heart-leaf.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courgette&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="host.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha384-g4NTh/Iv5PPU4xPyhEWqPcwtNXOvdaDI8LLnyYfyNZOjKJeYQyjzQ9X5275eBjpt" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js" integrity="sha384-8FWZA6BGMXhsfO+BLtrJK0We6gg5o1JyO8xQm6peWDEUs17ACA5ziE/NIAkl9z2k" crossorigin="anonymous" defer></script>
+  <script type="module" src="host.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ═══════════════ Gate ═══════════════ -->
+<section class="gate" id="gate" aria-labelledby="gateTitle">
+  <div class="gate-box">
+    <div class="gate-lantern" aria-hidden="true"><svg viewBox="0 0 120 180"><use href="../img/svg/sprite.svg#lantern"/></svg></div>
+    <h1 class="gate-title" id="gateTitle">Host desk</h1>
+    <p class="gate-lede">Ayana &amp; Sebin only. Enter your host passcode to light the lantern.</p>
+    <form id="gateForm" novalidate>
+      <input type="text" name="username" autocomplete="username" value="host" hidden>
+      <label class="sr-only" for="gateKey">Host passcode</label>
+      <input id="gateKey" name="passcode" type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="Passcode" required aria-describedby="gateMsg">
+      <button class="btn btn-glow btn-block" type="submit" id="gateBtn">Unlock</button>
+      <p class="gate-msg" id="gateMsg" role="alert" aria-live="assertive"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ═══════════════ Host app ═══════════════ -->
+<div class="app" id="app" hidden>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <svg class="logo" aria-hidden="true"><use href="../img/svg/sprite.svg#heart-leaf"/></svg>
+      <p class="brand">Sun or Shine <span class="badge-host">Host</span></p>
+      <nav class="tabs" role="tablist" aria-label="Host sections" id="tabs">
+        <button role="tab" type="button" id="t-overview" aria-controls="p-overview" aria-selected="true" data-tab="overview"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Overview</span></button>
+        <button role="tab" type="button" id="t-rsvps" aria-controls="p-rsvps" aria-selected="false" tabindex="-1" data-tab="rsvps"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg><span>RSVPs</span></button>
+        <button role="tab" type="button" id="t-invites" aria-controls="p-invites" aria-selected="false" tabindex="-1" data-tab="invites"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Invites</span></button>
+        <button role="tab" type="button" id="t-reveal" aria-controls="p-reveal" aria-selected="false" tabindex="-1" data-tab="reveal"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2l2.6 6.9L22 9.3l-5.6 4.6L18.2 21 12 17.3 5.8 21l1.8-7.1L2 9.3l7.4-.4z"/></svg><span>Reveal</span></button>
+      </nav>
+      <div class="top-actions">
+        <button type="button" class="btn btn-ghost btn-sm" id="refreshBtn" aria-describedby="updated"><svg aria-hidden="true" viewBox="0 0 24 24" class="i"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 4v5h-5"/></svg><span>Refresh</span></button>
+        <button type="button" class="btn btn-ghost btn-sm" id="lockBtn">Lock</button>
+      </div>
+    </div>
+  </header>
+  <p class="wrap updated" id="updated" aria-live="polite"></p>
+  <div class="wrap banner" id="banner" role="alert" hidden></div>
+
+  <main id="main" tabindex="-1">
+    <!-- Overview -->
+    <section class="panel wrap" id="p-overview" role="tabpanel" aria-labelledby="t-overview" tabindex="0">
+      <h2 id="ovTitle">Overview</h2>
+      <p class="lede" id="ovLede"></p>
+      <div class="kpis">
+        <div class="kpi kpi-hero">
+          <p class="k">Expected guests</p>
+          <p class="v" id="kHead">–</p>
+          <p class="s" id="kHeadSplit"></p>
+          <p class="s s2" id="kMaybe"></p>
+          <svg class="kpi-art" aria-hidden="true"><use href="../img/svg/sprite.svg#lantern"/></svg>
+        </div>
+        <div class="kpi"><p class="k"><span class="dot dot-yes" aria-hidden="true"></span>Yes</p><p class="v" id="kYes">–</p><p class="s">households</p></div>
+        <div class="kpi"><p class="k"><span class="dot dot-maybe" aria-hidden="true"></span>Maybe</p><p class="v" id="kMaybeN">–</p><p class="s">households</p></div>
+        <div class="kpi"><p class="k"><span class="dot dot-no" aria-hidden="true"></span>No</p><p class="v" id="kNo">–</p><p class="s">households</p></div>
+      </div>
+      <div class="grid2">
+        <div class="box">
+          <h3>Responses</h3>
+          <div class="stack" id="stackAtt" role="img"></div>
+          <div class="legend" id="legAtt"></div>
+          <p class="muted" id="unanswered"></p>
+        </div>
+        <div class="box">
+          <h3>Sun vs Shine</h3>
+          <div class="stack" id="stackVote" role="img"></div>
+          <div class="legend" id="legVote"></div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-head"><h3>Latest RSVPs</h3><button type="button" class="btn btn-ghost btn-sm" data-go="rsvps">See all</button></div>
+        <ul class="recent" id="recent"></ul>
+      </div>
+    </section>
+
+    <!-- RSVPs -->
+    <section class="panel wrap" id="p-rsvps" role="tabpanel" aria-labelledby="t-rsvps" tabindex="0" hidden>
+      <h2>RSVPs</h2>
+      <p class="lede" id="rsCount"></p>
+      <div class="toolbar">
+        <label class="sr-only" for="rsSearch">Search RSVPs</label>
+        <input class="search" id="rsSearch" type="search" placeholder="Search names, wishes, name ideas" autocomplete="off">
+        <button type="button" class="btn btn-ghost btn-sm" id="csvCopy">Copy CSV</button>
+        <button type="button" class="btn btn-primary btn-sm" id="csvDownload">Export CSV</button>
+      </div>
+      <div class="fchips" role="group" aria-label="Filter RSVPs" id="rsFilters">
+        <button type="button" aria-pressed="true" data-f="all">All</button>
+        <button type="button" aria-pressed="false" data-f="yes">Yes</button>
+        <button type="button" aria-pressed="false" data-f="maybe">Maybe</button>
+        <button type="button" aria-pressed="false" data-f="no">No</button>
+        <button type="button" aria-pressed="false" data-f="sun">☀️ Sun</button>
+        <button type="button" aria-pressed="false" data-f="shine">✨ Shine</button>
+        <button type="button" aria-pressed="false" data-f="wish">Has a wish</button>
+      </div>
+      <div class="table-wrap">
+        <table class="rt">
+          <caption class="sr-only">All RSVPs, newest first</caption>
+          <thead><tr><th scope="col">Name</th><th scope="col">Status</th><th scope="col">Adults</th><th scope="col">Kids</th><th scope="col">Guess</th><th scope="col">Wish / name idea</th><th scope="col">Updated</th></tr></thead>
+          <tbody id="rsBody"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="rsEmpty" hidden>No RSVPs match.</p>
+    </section>
+
+    <!-- Invites -->
+    <section class="panel wrap" id="p-invites" role="tabpanel" aria-labelledby="t-invites" tabindex="0" hidden>
+      <h2>Invites</h2>
+      <p class="lede">Tap Text, hit send in Messages, come back. We tick them off for you.</p>
+      <div class="inv-grid">
+        <div class="inv-main">
+          <div class="progress-h">
+            <p class="prog-l" id="invProg">0 of 0 texted</p>
+            <div class="bar" role="progressbar" aria-labelledby="invProg" id="invBarWrap" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="invBar"></i></div>
+          </div>
+          <a class="btn btn-primary btn-lg btn-block" id="textNext" href="#" role="button" aria-disabled="true"><svg aria-hidden="true" viewBox="0 0 24 24" class="i"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span id="textNextL">Text next</span></a>
+          <div class="fchips" role="group" aria-label="Filter invites" id="invFilters">
+            <button type="button" aria-pressed="true" data-f="all">All</button>
+            <button type="button" aria-pressed="false" data-f="none">Not texted</button>
+            <button type="button" aria-pressed="false" data-f="texted">Texted</button>
+            <button type="button" aria-pressed="false" data-f="opened">Opened</button>
+            <button type="button" aria-pressed="false" data-f="rsvpd">RSVP'd</button>
+          </div>
+          <ul class="clist" id="clist" aria-label="Invite list"></ul>
+          <p class="empty" id="invEmpty" hidden>No one here yet. Paste your list under “Add people”.</p>
+        </div>
+
+        <div class="inv-side">
+          <div class="box" id="addBox">
+            <h3>Add people</h3>
+            <p class="muted">One person per line: name, then number. Commas or tabs from a spreadsheet both work.</p>
+            <label for="paste" class="sr-only">Paste contacts</label>
+            <textarea id="paste" rows="5" spellcheck="false" placeholder="Rohan &amp; Asha Menon, 425 555 0181&#10;Grace Kim&#9;(206) 555-0177&#10;Uncle Joe" aria-describedby="parseSum"></textarea>
+            <p class="parse" id="parseSum" aria-live="polite">0 people ready</p>
+            <ul class="parse-list" id="parseList" aria-label="Preview"></ul>
+            <button type="button" class="btn btn-primary btn-block" id="addBtn" disabled>Add to list</button>
+          </div>
+
+          <div class="box" id="tplBox">
+            <h3>Message</h3>
+            <div class="seg" role="group" aria-label="Message template">
+              <button type="button" aria-pressed="true" data-t="warm">Warm</button>
+              <button type="button" aria-pressed="false" data-t="short">Short</button>
+            </div>
+            <label class="lbl" for="tplText">Edit the text. <code>{name}</code> becomes their name and <code>{link}</code> their personal link.</label>
+            <textarea id="tplText" rows="6"></textarea>
+            <div class="row-between"><button type="button" class="linkish" id="tplReset">Reset to the original</button><span class="chars" id="chars"></span></div>
+            <div class="bubble-wrap" aria-label="Preview of the next message">
+              <p class="bubble-to" id="bubTo">To: …</p>
+              <p class="bubble" id="bubble"></p>
+              <div class="linkprev" aria-hidden="true"><img src="../img/photos/og-share.jpg" alt="" width="1200" height="630" loading="lazy"><p>Sun or Shine? You're invited ☀️✨<small id="lpHost"></small></p></div>
+            </div>
+          </div>
+
+          <div class="box" id="qrBox">
+            <h3>QR code</h3>
+            <p class="muted">For reprinting the invitation. It opens the site without a personal link, so guests type their name.</p>
+            <div class="qr-wrap"><canvas id="qrCanvas" width="232" height="232" role="img" aria-label="QR code for the party site"></canvas></div>
+            <p class="qr-url" id="qrUrl"></p>
+            <button type="button" class="btn btn-ghost btn-block" id="qrDownload">Download PNG</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reveal -->
+    <section class="panel wrap" id="p-reveal" role="tabpanel" aria-labelledby="t-reveal" tabindex="0" hidden>
+      <h2>Reveal day</h2>
+      <p class="lede">Plug a laptop into the TV, open this tab and tap <b>Present full screen</b>. Then press and hold the answer to start the show.</p>
+
+      <div class="rehearse">
+        <label class="switch"><input type="checkbox" id="practice" checked aria-describedby="practiceDesc"><i aria-hidden="true"></i><span class="sr-only">Practice run</span></label>
+        <div><p class="rehearse-t" id="practiceTitle">Practice run is ON</p><p class="muted small" id="practiceDesc">Fake names. Nothing is saved and guests don't see the result. Turn it off for the real reveal.</p></div>
+      </div>
+
+      <div class="reveal-ctl">
+        <button type="button" class="hold sun" data-team="sun" aria-describedby="holdHint"><span class="fill" aria-hidden="true"></span><svg class="ico" aria-hidden="true"><use href="../img/svg/sprite.svg#sun"/></svg><span class="hold-t">It's a Sun!</span><small>Hold to reveal · Boy</small></button>
+        <button type="button" class="hold shine" data-team="shine" aria-describedby="holdHint"><span class="fill" aria-hidden="true"></span><svg class="ico" aria-hidden="true"><use href="../img/svg/sprite.svg#shine"/></svg><span class="hold-t">It's a Shine!</span><small>Hold to reveal · Girl</small></button>
+      </div>
+      <p class="muted small" id="holdHint">Hold for 1.5 seconds so a pocket tap can't spoil it. Keyboard: press Enter twice.</p>
+
+      <div class="grid2">
+        <div class="box">
+          <h3>Gifts to give</h3>
+          <div class="stepper" role="group" aria-label="Number of gifts">
+            <button type="button" id="nMinus" aria-label="Fewer gifts">−</button>
+            <output id="nOut" aria-live="polite">5</output>
+            <button type="button" id="nPlus" aria-label="More gifts">+</button>
+          </div>
+          <p class="muted small" id="poolPre"></p>
+        </div>
+        <div class="box">
+          <h3>On the TV</h3>
+          <button type="button" class="btn btn-primary btn-block" id="fsBtn"><svg aria-hidden="true" viewBox="0 0 24 24" class="i"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span>Present full screen</span></button>
+          <p class="muted small">Tip: test the TV with a practice run first. Turn the volume up for the cheers.</p>
+        </div>
+      </div>
+
+      <div class="box" id="savedBox">
+        <div class="box-head"><h3>Saved results</h3><span class="pill" id="revealState"></span></div>
+        <ol class="saved-winners" id="savedWinners"></ol>
+        <p class="muted small" id="savedMeta"></p>
+        <div class="row-gap">
+          <button type="button" class="btn btn-ghost btn-sm" id="clearWinners" hidden>Clear saved winners</button>
+          <button type="button" class="btn btn-ghost btn-sm" id="resetReveal" hidden>Reset the reveal</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span id="toastMsg"></span><button type="button" class="toast-act" id="toastAct" hidden>Undo</button></div>
+
+<!-- ═══════════════ Reveal overlay (full screen, TV-safe) ═══════════════ -->
+<div class="rv" id="rv" role="dialog" aria-modal="true" aria-labelledby="rvTitle" hidden tabindex="-1">
+  <div class="rv-layer rv-sky sun"></div>
+  <div class="rv-layer rv-sky shine"></div>
+  <div class="rv-layer rv-stars"></div>
+  <div class="rv-sun" aria-hidden="true"><svg viewBox="0 0 200 200"><g id="rvRays" stroke="#ffe7a3" stroke-width="5" stroke-linecap="round" opacity=".75"></g></svg><div class="disc"></div></div>
+  <div class="rv-layer rv-dim"></div>
+  <canvas class="rv-layer rv-fx" id="rvFx" aria-hidden="true"></canvas>
+  <div class="rv-layer rv-flash"></div>
+
+  <div class="rv-bar">
+    <span class="rv-mode" id="rvMode"></span>
+    <button type="button" class="rv-btn" id="rvFs"><span>Full screen</span></button>
+    <button type="button" class="rv-btn" id="rvClose" aria-label="Close reveal">Close ✕</button>
+  </div>
+
+  <section class="rv-stage" id="rvStage">
+    <p class="rv-pre" aria-hidden="true">Ayana &amp; Sebin's little light is…</p>
+    <div class="rv-orb" aria-hidden="true"></div>
+    <p class="rv-kicker">It's a</p>
+    <h2 class="rv-title" id="rvTitle"></h2>
+    <p class="rv-sub" id="rvSub"></p>
+    <p class="rv-stat" id="rvStat"></p>
+    <button type="button" class="btn btn-cream btn-lg rv-next" id="rvToDraw">Find our lucky guessers →</button>
+    <p class="rv-err" id="rvErr" role="alert" hidden></p>
+    <p class="sr-only" aria-live="assertive" id="rvAnnounce"></p>
+  </section>
+
+  <section class="rv-draw" id="rvDraw" hidden aria-labelledby="drTitle">
+    <header class="dr-head">
+      <h2 id="drTitle">The lantern draw</h2>
+      <p id="drSub"></p>
+    </header>
+    <div class="dr-main">
+      <div class="dr-col">
+        <div class="dr-notice" id="drNotice" role="status" hidden></div>
+        <div class="big-lantern" id="bigLantern">
+          <span class="bl-halo" aria-hidden="true"></span>
+          <svg viewBox="0 0 200 270" aria-hidden="true">
+            <defs><radialGradient id="bigGlass" cx="50%" cy="55%" r="70%"><stop offset="0" stop-color="#fffbe6"/><stop offset=".55" stop-color="#ffe08a"/><stop offset="1" stop-color="#f0a53a"/></radialGradient></defs>
+            <circle cx="100" cy="16" r="11" fill="none" stroke="#3b2412" stroke-width="5"/>
+            <path d="M72 27 L128 27 L152 54 L48 54 Z" fill="#4a2d16"/>
+            <rect x="38" y="52" width="124" height="14" rx="5" fill="#6b4422"/>
+            <rect x="34" y="66" width="132" height="148" rx="12" fill="url(#bigGlass)"/>
+            <rect x="34" y="66" width="132" height="148" rx="12" fill="none" stroke="#4a2d16" stroke-width="6"/>
+            <path d="M58 66v148M142 66v148" stroke="#4a2d16" stroke-width="3" opacity=".35"/>
+            <rect x="38" y="214" width="124" height="14" rx="5" fill="#6b4422"/>
+            <path d="M62 228 L138 228 L120 252 L80 252 Z" fill="#4a2d16"/>
+          </svg>
+          <div class="reel"><span id="reelName">Ready?</span></div>
+        </div>
+        <div class="dr-ctl">
+          <div class="stepper stepper-dark" role="group" aria-label="Number of gifts">
+            <span class="stepper-l">Gifts</span>
+            <button type="button" id="drMinus" aria-label="Fewer gifts">−</button>
+            <output id="drN">5</output>
+            <button type="button" id="drPlus" aria-label="More gifts">+</button>
+          </div>
+          <button type="button" class="btn btn-glow btn-lg" id="drSpin">Draw gift 1</button>
+          <button type="button" class="btn btn-ghost-light" id="drAbsentBtn" disabled>Not here? Re-spin</button>
+        </div>
+      </div>
+      <div class="dr-side">
+        <h3>Gift winners</h3>
+        <ol class="dr-winners" id="drWinners"></ol>
+        <div class="dr-absent" id="drAbsent" hidden></div>
+        <p class="dr-save" id="drSave" aria-live="polite"></p>
+        <button type="button" class="linkish light" id="drRestart" hidden>Start the draw over</button>
+      </div>
+    </div>
+    <p class="sr-only" aria-live="assertive" id="drLive"></p>
+  </section>
+</div>
+</body>
+</html>

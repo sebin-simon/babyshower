@@ -1,0 +1,28 @@
+# Dev tooling
+dev/node_modules/
+dev/data.json
+dev/data.json.*
+dev/data-host.json
+dev/data-host.json.*
+dev/*.tmp
+
+# Browser-test screenshots and logs
+.playwright-mcp/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Large original photos (the repo is public). The optimised copies the site
+# uses live in site/img/photos/ and are committed. Keep the originals on your
+# own machine / Google Drive; nothing here deletes them.
+assets/DSC_4735.JPG
+assets/*.JPG
+assets/*.jpeg
+assets/*.jpg
+assets/*.png
+assets/*.heic
+assets/*.HEIC

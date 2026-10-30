@@ -1,0 +1,147 @@
+/* Sun or Shine — design tokens
+   Source of truth: design/brand.md. Colours sampled from assets/ reference art.
+   Fonts: load via the <link> in brand.md (Courgette, Caveat, Nunito). */
+:root {
+  /* ---- Canopy & light ---- */
+  --c-canopy-gold:  #f2c230;  /* sunlit maple/gingko canopy */
+  --c-canopy-amber: #e8a317;  /* deeper canopy, falling leaves */
+  --c-honey:        #c9841a;  /* deep honey, leaf shadows (decor only, not text on cream) */
+  --c-honey-deep:   #8f5a10;  /* honey that passes AA as text on cream */
+  --c-rust:         #a4511f;  /* forest-floor leaves, mushroom caps */
+  --c-haze:         #f9dd9c;  /* glowing backlit sky between trees */
+  --c-lantern-glow: #ffd98a;  /* lantern / fairy-light glow */
+  --c-lantern-core: #fff6d6;  /* hottest point of a flame or bulb */
+
+  /* ---- Wood & ink ---- */
+  --c-bark:      #5a3a1e;  /* trunks, outlines, secondary text */
+  --c-bark-deep: #3b2412;  /* dark sections, footer, strong outlines */
+  --c-ink:       #2a180c;  /* body text on light/gold */
+
+  /* ---- Maroon (sweater + invite lettering) ---- */
+  --c-maroon:      #6b1f2a;  /* display headings, primary buttons */
+  --c-maroon-soft: #7a2533;  /* hover, borders */
+
+  /* ---- Paper ---- */
+  --c-cream: #fbf5e6;  /* invite note card, page background */
+  --c-paper: #f3e9d2;  /* card shade, inset panels */
+
+  /* ---- Team accents ---- */
+  --c-sun-blue:       #6fa3d6;  /* Team Sun (boy) — fills, bars, icons */
+  --c-sun-blue-deep:  #2c5d8f;  /* Team Sun text/buttons (AA on cream) */
+  --c-sun-blue-soft:  #d6e7f6;  /* Team Sun tint backgrounds */
+  --c-shine-pink:      #ec8fb0; /* Team Shine (girl) — fills, bars, icons */
+  --c-shine-pink-deep: #a3365f; /* Team Shine text/buttons (AA on cream) */
+  --c-shine-pink-soft: #fadbe5; /* Team Shine tint backgrounds */
+
+  /* ---- Semantic aliases ---- */
+  --color-bg:          var(--c-cream);
+  --color-surface:     #fffbf1;
+  --color-surface-alt: var(--c-paper);
+  --color-text:        var(--c-ink);
+  --color-text-muted:  var(--c-bark);
+  --color-heading:     var(--c-maroon);
+  --color-link:        var(--c-maroon);
+  --color-accent:      var(--c-canopy-gold);
+  --color-border:      rgba(90, 58, 30, 0.22);
+  --color-focus:       var(--c-sun-blue-deep);
+  --color-on-dark:     var(--c-cream);
+  --color-dark-bg:     var(--c-bark-deep);
+  --color-sun:         var(--c-sun-blue-deep);
+  --color-shine:       var(--c-shine-pink-deep);
+
+  /* ---- Gradients ---- */
+  --grad-canopy: radial-gradient(120% 80% at 50% 0%, #fff1c4 0%, var(--c-haze) 30%, var(--c-canopy-gold) 70%, var(--c-canopy-amber) 100%);
+  --grad-forest-floor: linear-gradient(180deg, var(--c-canopy-gold) 0%, var(--c-honey) 100%);
+  --grad-dusk: linear-gradient(180deg, #4a2c14 0%, var(--c-bark-deep) 100%);
+  --grad-sun: linear-gradient(135deg, var(--c-sun-blue-soft), var(--c-sun-blue));
+  --grad-shine: linear-gradient(135deg, var(--c-shine-pink-soft), var(--c-shine-pink));
+  --grad-lantern: radial-gradient(circle, var(--c-lantern-core) 0%, rgba(255, 217, 138, 0.55) 35%, rgba(255, 217, 138, 0) 70%);
+
+  /* ---- Typography ---- */
+  --font-display: "Courgette", "Brush Script MT", cursive;
+  --font-hand:    "Caveat", "Segoe Print", "Bradley Hand", cursive;
+  --font-body:    "Nunito", ui-rounded, "SF Pro Rounded", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-xs:      0.8125rem;                                  /* 13px  fine print */
+  --fs-sm:      0.9375rem;                                  /* 15px  labels, captions */
+  --fs-base:    clamp(1.0625rem, 1rem + 0.25vw, 1.125rem);  /* 17-18px body */
+  --fs-lg:      clamp(1.25rem, 1.15rem + 0.4vw, 1.375rem);  /* lead text, h4 */
+  --fs-xl:      clamp(1.5rem, 1.3rem + 0.9vw, 1.875rem);    /* h3 */
+  --fs-2xl:     clamp(1.875rem, 1.5rem + 1.6vw, 2.625rem);  /* h2 */
+  --fs-3xl:     clamp(2.375rem, 1.8rem + 2.6vw, 3.75rem);   /* h1 */
+  --fs-display: clamp(2.875rem, 2rem + 4.2vw, 5.25rem);     /* hero "Sun or Shine?" */
+
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-heavy: 800;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-body: 1.6;
+  --tracking-caps: 0.08em;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --measure: 38rem;
+  --container: 72rem;
+
+  /* ---- Radii ---- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-blob: 42% 58% 55% 45% / 48% 42% 58% 52%;
+
+  /* ---- Shadows (always warm bark-tinted, never grey) ---- */
+  --shadow-sm: 0 1px 2px rgba(59, 36, 18, 0.12), 0 2px 6px rgba(59, 36, 18, 0.08);
+  --shadow-md: 0 2px 4px rgba(59, 36, 18, 0.10), 0 8px 20px rgba(90, 58, 30, 0.14);
+  --shadow-lg: 0 4px 10px rgba(59, 36, 18, 0.12), 0 18px 40px rgba(90, 58, 30, 0.20);
+  --shadow-paper: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 10px 30px -8px rgba(90, 58, 30, 0.28);
+  --shadow-inset: inset 0 2px 6px rgba(59, 36, 18, 0.14);
+
+  /* ---- Glows ---- */
+  --glow-lantern: 0 0 12px rgba(255, 217, 138, 0.85), 0 0 36px rgba(242, 194, 48, 0.55), 0 0 80px rgba(232, 163, 23, 0.30);
+  --glow-soft:    0 0 24px rgba(255, 217, 138, 0.55);
+  --glow-sun:     0 0 0 3px var(--c-sun-blue-soft), 0 0 24px rgba(111, 163, 214, 0.55);
+  --glow-shine:   0 0 0 3px var(--c-shine-pink-soft), 0 0 24px rgba(236, 143, 176, 0.55);
+  --glow-text:    0 0 18px rgba(255, 217, 138, 0.9);                 /* text-shadow for headings on dark */
+  --filter-glow:  drop-shadow(0 0 6px rgba(255, 217, 138, 0.9)) drop-shadow(0 0 18px rgba(242, 194, 48, 0.6)); /* for SVGs */
+  --focus-ring:   0 0 0 3px var(--c-cream), 0 0 0 6px var(--color-focus);
+
+  /* ---- Motion ---- */
+  --ease-out:     cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-bounce:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-float:   cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 600ms;
+  --dur-drift: 9s;    /* leaf fall / lantern sway loop */
+
+  /* ---- Layers ---- */
+  --z-particles: 1;
+  --z-content: 10;
+  --z-header: 50;
+  --z-modal: 100;
+  --z-reveal: 200;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --dur-drift: 0s;
+  }
+}
