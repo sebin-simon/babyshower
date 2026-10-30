@@ -10,6 +10,7 @@
  */
 import { cryptoInt, drawable } from './lib.js';
 import { createFx, COLORS } from './fx.js';
+import * as sound from './sound.js';
 
 const MIN_N = 1;
 const MAX_N = 10;
@@ -83,6 +84,7 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
 
   function open({ team, practice, n, stat, prepare }) {
     if (s) close(true);
+    sound.unlockAudio();
     lastFocus = document.activeElement;
     s = {
       team, practice, n: clampN(n), stat, prepare,
@@ -195,15 +197,15 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
       .call(() => { const [x, y] = centerOf(orb); fx.converge(x, y, 80); }, null, 0.7)
       // three heartbeats, each bigger: the drum roll
       .to(orb, { scale: 1.3, duration: 0.18, yoyo: true, repeat: 1, ease: 'power2.out' }, 1.7)
-      .call(() => buzz(30), null, 1.7)
+      .call(() => { buzz(30); sound.playHeartbeat(1); }, null, 1.7)
       .to(orb, { scale: 1.5, duration: 0.18, yoyo: true, repeat: 1, ease: 'power2.out' }, 2.4)
-      .call(() => buzz(40), null, 2.4)
+      .call(() => { buzz(40); sound.playHeartbeat(2); }, null, 2.4)
       .to(orb, { scale: 1.75, duration: 0.18, yoyo: true, repeat: 1, ease: 'power2.out' }, 3.05)
-      .call(() => buzz(60), null, 3.05)
+      .call(() => { buzz(60); sound.playHeartbeat(3); }, null, 3.05)
       .to(pre, { opacity: 0, y: -12, duration: 0.4 }, 3.35)
       .to(orb, { scale: 16, opacity: 0, duration: 0.65, ease: 'power3.in' }, 3.6)
       .to(sel('.rv-flash'), { opacity: 1, duration: 0.14 }, 4.1)
-      .call(() => { G.set([pre, orb], { display: 'none' }); fx.boom(team); buzz([30, 60, 30, 60, 120]); }, null, 4.24)
+      .call(() => { G.set([pre, orb], { display: 'none' }); fx.boom(team); buzz([30, 60, 30, 60, 120]); sound.playReveal(team); }, null, 4.24)
       .set(sel('.rv-sky.' + team), { opacity: 1 }, 4.24)
       .to(sel('.rv-flash'), { opacity: 0, duration: 1.3, ease: 'power2.out' }, 4.3);
     if (team === 'sun') tl.fromTo(sel('.rv-sun'), { opacity: 1, yPercent: 70 }, { yPercent: 0, duration: 2.4, ease: 'power3.out' }, 4.24);
@@ -379,6 +381,7 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
     if (!s || s.spinning || s.winners.length >= s.n) return;
     const av = available();
     if (!av.length) { render(); return; }
+    sound.unlockAudio();
     s.resumed = false;
     // The winner is chosen now, before any animation.
     const win = av[cryptoInt(av.length)];
@@ -402,6 +405,7 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
       const [x, y] = centerOf(lantern);
       fx.burst(x, y, { n: 80, colors: COLORS[cur.team], speed: 10, gravity: 0.08, shape: 'spark', life: 90 });
       buzz([20, 40, 60]);
+      sound.playWin();
       drawBtn.focus({ preventScroll: true });
     });
   }
@@ -436,6 +440,7 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
       reelName.className = '';
       void reelName.offsetWidth;
       reelName.className = 'tick';
+      sound.playTick(delay);
       delay *= 1.12; // each tick 12% slower: ~3.3 s in all
       if (delay > 420) { tickTimer = setTimeout(land, 260); return; }
       tickTimer = setTimeout(step, delay);
@@ -474,6 +479,22 @@ export function createReveal({ root, reducedMotion, toast, onN, onClose }) {
   nMinus.addEventListener('click', () => s && setN(s.n - 1));
   nPlus.addEventListener('click', () => s && setN(s.n + 1));
   $('#rvClose', root).addEventListener('click', () => close());
+
+  const soundBtn = $('#rvSound', root);
+  const renderSoundBtn = () => {
+    if (!soundBtn) return;
+    const on = sound.isSoundEnabled();
+    soundBtn.innerHTML = `<span>${on ? '🔊 Sound' : '🔇 Muted'}</span>`;
+    soundBtn.setAttribute('aria-pressed', String(on));
+    soundBtn.setAttribute('aria-label', on ? 'Mute sound' : 'Unmute sound');
+  };
+  if (soundBtn) {
+    renderSoundBtn();
+    soundBtn.addEventListener('click', () => {
+      sound.toggleSound();
+      renderSoundBtn();
+    });
+  }
 
   root.addEventListener('keydown', (e) => {
     if (!s) return;
