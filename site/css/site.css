@@ -258,6 +258,141 @@ h3 { font-size: var(--fs-2xl); }
 .detail dd { margin: 0; font-weight: 700; line-height: 1.45; grid-column: 2; }
 .detail dt::after { content: none; }
 
+/* ================================ ATTIRE ================================ */
+.attire-card {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: 22px;
+  padding: 42px 24px 34px;
+  text-align: center;
+  background: var(--color-surface);
+  background-image: radial-gradient(circle at 15% 10%, rgba(255,217,138,.3), transparent 42%), radial-gradient(circle at 88% 90%, rgba(242,194,48,.22), transparent 45%);
+  box-shadow: var(--shadow-paper), inset 0 0 0 1.5px rgba(201,132,26,.45), inset 0 0 0 9px var(--color-surface), inset 0 0 0 10.5px rgba(201,132,26,.32);
+}
+.attire-card .corner { position: absolute; width: 50px; height: 50px; }
+.attire-card .corner.tl { left: -12px; top: -16px; transform: rotate(-24deg); color: var(--c-canopy-amber); fill: var(--c-canopy-amber); }
+.attire-card .corner.br { right: -12px; bottom: -16px; transform: rotate(150deg); color: var(--c-canopy-gold); fill: var(--c-canopy-gold); }
+
+.attire-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(253, 236, 192, 0.7);
+  box-shadow: inset 0 0 0 1.5px rgba(201, 132, 26, 0.35);
+  font-weight: 800;
+  font-size: var(--fs-xs);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-maroon);
+  margin-bottom: 12px;
+}
+.attire-badge-ico { width: 16px; height: 16px; color: var(--c-maroon); }
+
+.attire-highlight {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 1.4rem + 1vw, 2.25rem);
+  color: var(--c-maroon);
+  margin: 0 0 10px;
+  line-height: var(--lh-snug);
+}
+
+.attire-block{
+  border-top:1.5px dashed rgba(143,90,16,.3);
+  margin-top: 20px;
+}
+
+#attire-h{
+  margin: 20px auto 10px auto;
+  font-size: 24px;
+}
+.attire-c{
+  font-size: 16px;
+  color: var(--c-ink);
+}
+
+.attire-note {
+  font-size: 1.075rem;
+  line-height: 1.6;
+  max-width: 44ch;
+  margin: 0 auto 24px;
+  color: var(--c-bark);
+}
+
+.attire-palette {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
+.palette-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 76px;
+}
+.sw-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sw-c);
+  border: 2px solid var(--sw-b);
+  box-shadow: 0 4px 10px -2px rgba(90, 58, 30, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+  transition: transform .2s ease;
+}
+.palette-swatch:hover .sw-pill {
+  transform: scale(1.1);
+}
+.sw-name {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--c-bark-deep);
+  line-height: 1;
+}
+
+.attire-tips {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 540px;
+  margin: 0 auto 16px;
+  text-align: left;
+}
+@media (min-width: 600px) {
+  .attire-tips {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+}
+.tip-card {
+  padding: 14px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 251, 241, 0.7);
+  box-shadow: inset 0 0 0 1px rgba(201, 132, 26, 0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.tip-icon { font-size: 1.35rem; line-height: 1; }
+.tip-text { display: flex; flex-direction: column; gap: 3px; }
+.tip-text b { font-size: var(--fs-xs); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--c-maroon); }
+.tip-text span { font-size: .875rem; line-height: 1.35; color: var(--c-bark); }
+
+.attire-tagline {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--c-honey-deep);
+  margin: 12px 0 0;
+}
+
 /* ================================ STORY ================================ */
 .wipe {
   position: relative; max-width: 980px; margin: 0 auto; aspect-ratio: 3 / 2; border-radius: 22px; overflow: hidden;

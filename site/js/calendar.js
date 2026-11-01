@@ -7,7 +7,7 @@ import { $$, EVENT } from './util.js';
 
 const TITLE = `${CONFIG.hosts}'s Baby Shower & Gender Reveal`;
 const DESC = 'Sun ☀️ (Boy) or Shine ✨ (Girl)? Your presence is our greatest gift, so please, no wrapped presents. ' +
-  'Just bring your love and predictions!';
+  'Just bring your love and predictions! Attire: Light Neutrals / Garden Casual.';
 
 const utcStamp = (d) => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 const location = () => `${CONFIG.venue}, ${CONFIG.address}`;

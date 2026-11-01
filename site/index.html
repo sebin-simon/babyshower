@@ -87,6 +87,7 @@
     <symbol id="i-home" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 32 12l22 18"/><path d="M16 26v26h32V26"/><path d="M27 52V38h10v14"/></g></symbol>
     <symbol id="i-bigheart" viewBox="0 0 64 64"><path d="M32 54s-18-11-22-22C7 23 12 14 21 14c5 0 9 3 11 7 2-4 6-7 11-7 9 0 14 9 11 18-4 11-22 22-22 22z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
     <symbol id="i-leaf" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6l4.5 10.5 6-3.5-1.5 12.5 9.5-6-1 8 10.5.5-6 6.5 4 4.5-12.5 4 2 5-12.5-2.5h-4L18 47.5l2-5-12.5-4 4-4.5-6-6.5 10.5-.5-1-8 9.5 6-1.5-12.5 6 3.5z"/><path d="M32 44v14"/></g></symbol>
+    <symbol id="i-hanger" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7a2.5 2.5 0 1 1 2.5 2.5c-.8 0-1.5.5-1.5 1.5v1"/><path d="M12 12 2.5 17.5a1.5 1.5 0 0 0 .8 2.5h17.4a1.5 1.5 0 0 0 .8-2.5L12 12z"/></g></symbol>
     <!-- Paper sky lantern used by the RSVP "send my light" moment -->
     <symbol id="s-sky-lantern" viewBox="0 0 100 140">
       <path d="M22 18Q50 4 78 18L86 104Q50 116 14 104Z" fill="url(#g-paper)" stroke="#c9841a" stroke-width="2"/>
@@ -167,14 +168,92 @@
       <a class="btn btn-primary btn-lg" href="#guess" id="heroCta"><svg class="flame" aria-hidden="true"><use href="#i-flame"/></svg><span id="heroCtaTxt">RSVP &amp; cast your guess</span></a>
       <p class="micro" id="heroMicro">About 30 seconds · 3 taps</p>
     </div>
-    <a class="cue" href="#story"><span>follow the little light</span><span class="trail" aria-hidden="true"><i></i></span></a>
+    <a class="cue" href="#attire"><span>follow the little light</span><span class="trail" aria-hidden="true"><i></i></span></a>
   </div>
 </header>
 
 <main id="main" tabindex="-1">
 
-<!-- ============================ 2 · INVITATION (morning) ============================ -->
- <!--
+<!-- ============================ 2 · ATTIRE (morning) ============================ 
+<section class="sec" id="attire" data-sky="morning" aria-labelledby="attire-h">
+  <div class="sec-head rv">
+    <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="5" fill="#f2c230"/></svg>Morning · What to wear</p>
+    <h2 id="attire-h">Attire Suggestion</h2>
+    <p class="lede">Light Neutrals / Garden Casual</p>
+  </div>
+  <article class="attire-card paper-grain rv" id="attireCard">
+    <svg class="corner tl" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-maple"/></svg>
+    <svg class="corner br" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-ginkgo"/></svg>
+
+    <div class="attire-badge" aria-hidden="true">
+      <svg class="attire-badge-ico" viewBox="0 0 24 24"><use href="#i-hanger"/></svg>
+      <span>Dress Code</span>
+    </div>
+
+    <h3 class="attire-highlight">Light Neutrals &amp; Garden Casual</h3>
+
+    <p class="attire-note">
+      We invite our beloved friends and family to join us in light, airy neutrals or relaxed garden-casual attire.
+      Think warm creams, soft beiges, gentle pastels, and earthy tones inspired by a sunlit autumn day.
+    </p>
+ 
+    <div class="attire-palette" role="group" aria-label="Suggested color palette">
+      <div class="palette-swatch" style="--sw-c: #faf6ee; --sw-b: #e2d5be;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Warm Ivory</span>
+      </div>
+      <div class="palette-swatch" style="--sw-c: #ebdcc9; --sw-b: #cbb497;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Soft Sand</span>
+      </div>
+      <div class="palette-swatch" style="--sw-c: #dfc39e; --sw-b: #bfa078;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Oat &amp; Tan</span>
+      </div>
+      <div class="palette-swatch" style="--sw-c: #d0dcce; --sw-b: #a5b89e;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Garden Sage</span>
+      </div>
+      <div class="palette-swatch" style="--sw-c: #ebd5bf; --sw-b: #c8ad93;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Soft Earth</span>
+      </div>
+      <div class="palette-swatch" style="--sw-c: #fbe6aa; --sw-b: #d7be7b;">
+        <span class="sw-pill" aria-hidden="true"></span>
+        <span class="sw-name">Sunlit Gold</span>
+      </div>
+    </div>
+ 
+    <div class="attire-tips">
+      <div class="tip-card">
+        <span class="tip-icon" aria-hidden="true">🌾</span>
+        <div class="tip-text">
+          <b>Colors</b>
+          <span>Whites, creams, tans, beiges &amp; gentle earth tones</span>
+        </div>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon" aria-hidden="true">🌿</span>
+        <div class="tip-text">
+          <b>Style</b>
+          <span>Sundresses, linen shirts, relaxed chinos &amp; light layers</span>
+        </div>
+      </div>
+      <div class="tip-card">
+        <span class="tip-icon" aria-hidden="true">💛</span>
+        <div class="tip-text">
+          <b>Comfort</b>
+          <span>Most of all, wear whatever makes you feel happy &amp; comfy!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule" aria-hidden="true"><svg viewBox="0 0 100 120"><use href="img/svg/sprite.svg#acorn"/></svg></div>
+    <p class="attire-tagline">Come ready to celebrate, smile, and make memories!</p>
+  </article> -->
+</section>
+
+<!--
 <section class="sec" id="invite" data-sky="morning" aria-labelledby="invite-h">
   <div class="sec-head rv">
     <p class="eyebrow"><svg class="tod" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18" stroke="#6b1f2a" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="5" fill="#f2c230"/></svg>Morning · The invitation</p>
@@ -419,6 +498,12 @@
       <div class="savelink" id="saveLink" hidden>
         <p>Want to edit later from another phone? Keep your personal link.</p>
         <button type="button" class="btn btn-ghost btn-sm" id="copyLink"><svg aria-hidden="true"><use href="#i-link"/></svg><span id="copyTxt">Copy my link</span></button>
+      </div>
+
+      <div class="attire-block">
+
+        <h4 id="attire-h">Attire Suggestion</h4>
+        <p class="attire-c">Light Neutrals / Garden Casual</p>
       </div>
 
       <div class="bonus" id="bonus">

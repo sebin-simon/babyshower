@@ -55,9 +55,18 @@ function scrollStory() {
 
   ST.batch('.rv', { start: 'top 88%', once: true, onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 1, stagger: 0.1, ease: 'power3.out', overwrite: true }) });
 
+  // Attire card reveals gently.
+  if ($('#attireCard')) {
+    gsap.from('#attireCard', { opacity: 0, y: 36, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: '#attireCard', start: 'top 86%', once: true } });
+    gsap.from('#attireCard .palette-swatch', { opacity: 0, y: 16, stagger: 0.08, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: '#attireCard .attire-palette', start: 'top 88%', once: true } });
+    gsap.from('#attireCard .tip-card', { opacity: 0, y: 16, stagger: 0.1, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: '#attireCard .attire-tips', start: 'top 88%', once: true } });
+  }
+
   // The invitation unfolds like a letter.
-  gsap.from('#inviteCard', { rotationX: -72, transformOrigin: '50% 0%', transformPerspective: 1100, opacity: 0, y: 40, duration: 1.5, ease: 'power3.out', scrollTrigger: { trigger: '#inviteCard', start: 'top 86%', once: true } });
-  gsap.from('#inviteCard .detail, #inviteCard .actions', { opacity: 0, x: -16, stagger: 0.12, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: '#inviteCard .details', start: 'top 88%', once: true } });
+  if ($('#inviteCard')) {
+    gsap.from('#inviteCard', { rotationX: -72, transformOrigin: '50% 0%', transformPerspective: 1100, opacity: 0, y: 40, duration: 1.5, ease: 'power3.out', scrollTrigger: { trigger: '#inviteCard', start: 'top 86%', once: true } });
+    gsap.from('#inviteCard .detail, #inviteCard .actions', { opacity: 0, x: -16, stagger: 0.12, duration: 0.7, ease: 'power2.out', scrollTrigger: { trigger: '#inviteCard .details', start: 'top 88%', once: true } });
+  }
 
   // Storybook → real: follows the scroll until the guest grabs the leaf.
   const ws = { x: 100 };
