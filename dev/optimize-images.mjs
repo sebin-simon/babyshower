@@ -23,10 +23,10 @@ const FONTS = join(ROOT, 'dev/fonts');
 // narrower than N, the file is written at the original width (the name stays stable for srcset).
 // budgetKB: optional per-width JPEG ceiling; quality steps down from `quality` until it fits.
 const JOBS = [
-  { src: 'DSC_4735.JPG', name: 'couple-real', widths: [800, 1600], budgetKB: { 800: 150, 1600: 400 } },
+  { src: 'DSC_4716.jpg', name: 'couple-real', widths: [800, 1600], budgetKB: { 800: 150, 1600: 400 } },
   { src: 'cartoon.jpeg', name: 'cartoon', widths: [600, 1200] },
   { src: 'Gemini_Generated_Image_buettkbuettkbuet.jpeg', name: 'cartoon-hero', widths: [800, 1600] },
-  { src: 'Gemini_Generated_Image_r6tellr6tellr6te.jpeg', name: 'illustrated-wide', widths: [1000, 1800] },
+  { src: 'couple-cart.jpg', name: 'illustrated-wide', widths: [1000, 1800] },
   { src: 'baby.png', name: 'baby', widths: [400, 600], budgetKB: { 400: 100, 600: 150 } },
   { src: 'big-yes.png', name: 'big-yes', widths: [400, 600], budgetKB: { 400: 100, 600: 150 } },
   { src: 'bump.jpg', name: 'bump', widths: [400, 600], budgetKB: { 400: 100, 600: 150 } },
