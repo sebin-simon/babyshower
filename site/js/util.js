@@ -104,7 +104,7 @@ export const EVENT = Object.freeze({
   timeRange: s.ap === e.ap ? `${s.t}–${e.t} ${e.ap}` : `${s.t} ${s.ap}–${e.t} ${e.ap}`,
   timeLong: `${s.full} ${s.ap === e.ap ? '' : s.ap + ' '}– ${e.full} ${e.ap} ${tzName === 'PST' || tzName === 'PDT' ? 'Pacific' : tzName}`.replace(/\s+/g, ' '),
   venue: CONFIG.venue,
-  venueShort: (CONFIG.venue || '').replace(/\s+Campus$/i, ''),
+  venueShort: CONFIG.venueShort || (CONFIG.venue || '').replace(/\s+Campus$/i, ''),
   address: CONFIG.address,
   hosts: CONFIG.hosts,
 });

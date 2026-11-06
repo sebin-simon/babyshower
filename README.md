@@ -1,6 +1,6 @@
 # Sun or Shine
 
-The website for Ayana & Sebin's Baby Shower & Gender Reveal (Sat, Nov 7, 2026 · Redmond).
+The website for Ayana & Sebin's Baby Shower & Gender Reveal (Sat, Nov 7, 2026 · Seattle).
 It's a static site (no build step) on GitHub Pages, with a private Google Sheet behind it.
 
 ```

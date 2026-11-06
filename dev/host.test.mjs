@@ -104,6 +104,6 @@ test('cryptoInt is unbiased-ish and in range; drawable excludes winners and abse
 test('daysUntil counts calendar days in the party time zone', () => {
   const party = '2026-11-07T12:00:00-08:00';
   assert.equal(daysUntil(party, 'America/Los_Angeles', new Date('2026-10-29T16:00:00Z')), 9);
-  assert.equal(daysUntil(party, 'America/Los_Angeles', new Date('2026-11-07T07:30:00Z')), 1, 'still Nov 6 in Redmond');
+  assert.equal(daysUntil(party, 'America/Los_Angeles', new Date('2026-11-07T07:30:00Z')), 1, 'still Nov 6 in Seattle');
   assert.equal(daysUntil(party, 'America/Los_Angeles', new Date('2026-11-07T20:00:00Z')), 0);
 });

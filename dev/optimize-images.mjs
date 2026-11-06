@@ -108,7 +108,7 @@ async function buildOg() {
   const title = await textLayer([['Sun or Shine?', 'display', '#6b1f2a']], 96);
   const sub = await textLayer([['Ayana & Sebin\u2019s Baby Shower', 'heavy', '#3b2412']], 40);
   const sub2 = await textLayer([['& Gender Reveal', 'heavy', '#3b2412']], 40);
-  const date = await textLayer([['Saturday \u00b7 Nov 7 \u00b7 Redmond, WA', 'bold', '#8f5a10']], 30);
+  const date = await textLayer([['Saturday \u00b7 Nov 7 \u00b7 Seattle, WA', 'bold', '#8f5a10']], 30);
   const team = await textLayer([['Team Sun', 'heavy', '#2c5d8f'], ['  vs  ', 'bold', '#5a3a1e'], ['Team Shine', 'heavy', '#a3365f']], 31);
 
   const center = async (buf, top) => {

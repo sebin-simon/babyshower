@@ -112,7 +112,7 @@ h3 { font-size: var(--fs-2xl); }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 
 /* ================================ SECTIONS ================================ */
-.sec { position: relative; padding: clamp(72px, 12vw, 120px) 16px; }
+.sec { position: relative; padding: clamp(40px, 12vw, 80px) 16px; }
 .wrap { max-width: var(--container); margin: 0 auto; }
 .sec-head { text-align: center; max-width: 44rem; margin: 0 auto clamp(28px, 5vw, 44px); }
 .paper-grain { position: relative; isolation: isolate; }
@@ -300,8 +300,11 @@ h3 { font-size: var(--fs-2xl); }
 }
 
 .attire-block{
+  border-bottom:1.5px dashed rgba(143,90,16,.3);
   border-top:1.5px dashed rgba(143,90,16,.3);
+  padding-bottom: 30px;
   margin-top: 20px;
+  text-align: center;
 }
 
 #attire-h{

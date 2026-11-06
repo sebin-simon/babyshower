@@ -35,8 +35,9 @@ export const CONFIG = Object.freeze({
   // 2.5-hour party for calendar invites (11:30 AM – 2:00 PM).
   endDate: '2026-11-07T14:00:00-08:00',
 
-  venue: 'eaves Redmond Campus',
-  address: '15606 NE 40th St, Bldg Z, Redmond, WA',
+  venue: '3618 SW Alaska St',
+  venueShort: 'Seattle',
+  address: 'Seattle, WA 98126',
 
   siteUrl: '', // public site URL, e.g. https://<user>.github.io/<repo>/ (fill in after deploy)
   apiUrl,
